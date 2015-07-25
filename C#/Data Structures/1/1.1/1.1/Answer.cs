@@ -9,6 +9,10 @@ namespace _1._1
     public static class Answer
     {
         // Naive solution
+
+        /// <summary>
+        /// Returns true if there are no repeated characters in the string.
+        /// </summary>
         public static bool IsUnique(this string txt)
         {
             bool ret = true;
