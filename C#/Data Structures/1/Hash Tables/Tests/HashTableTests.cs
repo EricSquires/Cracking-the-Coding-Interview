@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HashTables;
-using System.Collections.Generic;
 
 namespace Tests
 {
@@ -98,6 +97,48 @@ namespace Tests
             Assert.AreEqual(arr[0], "A");
             Assert.AreEqual(arr[1], "BB");
             Assert.AreEqual(arr[2], "b");
+        }
+
+        [TestMethod]
+        public void RemoveAndClear()
+        {
+            var t = new HashTable<int>();
+
+            t.Add(int.MinValue);
+            t.Add(int.MaxValue);
+            t.Add(42);
+            t.Add(-2);
+
+            Assert.AreEqual(t.Count, 4);
+
+            Assert.IsTrue(t.Remove(42));
+            Assert.AreEqual(t.Count, 3);
+
+            Assert.IsFalse(t.Remove(int.MinValue + 1));
+            Assert.IsFalse(t.Remove(int.MaxValue - 1));
+            Assert.AreEqual(t.Count, 3);
+
+            t.Clear();
+            Assert.AreEqual(t.Count, 0);
+        }
+
+        [TestMethod]
+        public void Enumerator()
+        {
+            var t = new HashTable<int>();
+            
+            t.Add(-1);
+            t.Add(0);
+            t.Add(1);
+
+            var values = new int[] {0, 1, -1};
+            int i = 0;
+
+            foreach(var item in t)
+            {
+                Assert.AreEqual(item, values[i]);
+                i++;
+            }
         }
     }
 }
