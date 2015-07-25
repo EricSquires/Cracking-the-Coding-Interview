@@ -9,8 +9,11 @@ namespace HashTables
 {
     public class HashTable<T> : ICollection<T>
     {
-        // Don't want indices changing, so only accept this at initialization
-        private readonly Func<T, int> _hashFunc;
+        private const int _DEFAULT_SIZE = 100;
+
+        // Don't want indices changing, so only accept this at initialization.
+        // Use the built-in hash function by default
+        private readonly Func<T, int> _hashFunc = (T item) => item.GetHashCode();
 
         // Start with the built-in linked list implementation. We can revisit this and implement it by hand later since this is all for practice.
         private readonly LinkedList<T>[] _data;
@@ -22,25 +25,29 @@ namespace HashTables
 
         #region Ctors
 
-        public HashTable(Func<T, int> hashFunc, int size)
-        {
-            _hashFunc = hashFunc;
-            _data = new LinkedList<T>[size];
-        }
-
         /// <summary>
         /// Initialize the <see cref="HashTable{T}"/> with the default size (100)
         /// </summary>
         /// <param name="hashFunc">The hashing function to use for inserting and retrieving data</param>
-        public HashTable(Func<T, int> hashFunc) : this(hashFunc, 100)
+        public HashTable(Func<T, int> hashFunc) : this(hashFunc, _DEFAULT_SIZE)
         {
+        }
+
+        public HashTable(Func<T, int> hashFunc, int size) : this(size)
+        {
+            _hashFunc = hashFunc;
         }
 
         /// <summary>
         /// By default, we'll just use the given type's hash function.
         /// </summary>
-        public HashTable() : this((T item) => item.GetHashCode())
+        public HashTable() : this(_DEFAULT_SIZE)
         {
+        }
+
+        public HashTable(int size)
+        {
+            _data = new LinkedList<T>[size];
         }
 
         #endregion
