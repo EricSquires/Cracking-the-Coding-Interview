@@ -6,8 +6,8 @@ My plan is to run through the problems relatively quickly cranking out the first
 Progress:
 
 1. Arrays and Strings
-  1. **Is Unique**:  Naive solution
-  2. **Check Permutation**: Naive solution
+  1. **Is Unique**:  Solved - 1<sup>st</sup> pass
+  2. **Check Permutation**: Solved - 1<sup>st</sup> pass
   3. **URLify**:
   4. **Palindrome Permutation**:
   5. **One Away**:
