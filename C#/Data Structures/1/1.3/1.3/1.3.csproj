@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnswerRealWorld.cs" />
+    <Compile Include="AnswerSelfImplemented.cs" />
     <Compile Include="IAnswer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
