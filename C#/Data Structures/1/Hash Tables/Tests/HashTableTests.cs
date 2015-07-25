@@ -82,5 +82,22 @@ namespace Tests
             Assert.IsFalse(t.Contains(int.MinValue + 1));
             Assert.IsFalse(t.Contains(int.MaxValue - 1));
         }
+
+        [TestMethod]
+        public void CopyTo()
+        {
+            var t = new HashTable<string>(_SIMPLE_STRING_HASH, 26);
+
+            t.Add("b");
+            t.Add("A");
+            t.Add("BB");
+
+            var arr = new string[t.Count];
+            t.CopyTo(arr, 0);
+
+            Assert.AreEqual(arr[0], "A");
+            Assert.AreEqual(arr[1], "BB");
+            Assert.AreEqual(arr[2], "b");
+        }
     }
 }
