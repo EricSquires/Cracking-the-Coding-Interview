@@ -17,9 +17,9 @@ namespace _1._1
             {
                 for(var i = 0; ret && i < txt.Length; i++)
                 {
-                    for(var j = i; ret && j < txt.Length; j++)
+                    for(var j = i + 1; ret && j < txt.Length; j++)
                     {
-                        ret = txt[0] != txt[1];
+                        ret = txt[i] != txt[j];
                     }
                 }
             }
