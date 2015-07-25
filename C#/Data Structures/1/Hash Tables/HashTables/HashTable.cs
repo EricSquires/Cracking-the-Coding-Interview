@@ -54,7 +54,18 @@ namespace HashTables
 
         // Good excuse to try out new expression bodied function feature.
         // Just calculate the hash and cap it to the length of the data array.
-        private int GetIndex(T item) => Math.Abs(_hashFunc(item)) % _data.Length;
+        private int GetIndex(T item)
+        {
+            int hash = _hashFunc(item);
+
+            // If the hash is the minimum value, we need to increment by one to avoid an overflow exception in twos complement scenarios
+            if(hash == int.MinValue)
+            {
+                hash++;
+            }
+
+            return Math.Abs(hash) % _data.Length;
+        }
 
         public void Add(T item)
         {
