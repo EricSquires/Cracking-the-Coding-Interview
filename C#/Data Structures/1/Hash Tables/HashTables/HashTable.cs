@@ -89,6 +89,11 @@ namespace HashTables
 
         public bool Contains(T item)
         {
+            if(item == null)
+            {
+                return false;
+            }
+
             int index = GetIndex(item);
 
             return _data[index] != null && _data[index].Contains(item);
