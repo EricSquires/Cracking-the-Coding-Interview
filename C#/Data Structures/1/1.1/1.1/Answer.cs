@@ -13,11 +13,14 @@ namespace _1._1
         {
             bool ret = true;
 
-            for(var i = 0; ret && i < txt.Length; i++)
+            if(txt != null)
             {
-                for(var j = i; ret && j < txt.Length; j++)
+                for(var i = 0; ret && i < txt.Length; i++)
                 {
-                    ret = txt[0] != txt[1];
+                    for(var j = i; ret && j < txt.Length; j++)
+                    {
+                        ret = txt[0] != txt[1];
+                    }
                 }
             }
 
