@@ -50,6 +50,21 @@ namespace Tests
         }
 
         [TestMethod]
+        public void EmptyString()
+        {
+            var t = new HashTable<string>();
+
+            t.Add(string.Empty);
+
+            Assert.AreEqual(t.Count, 1);
+
+            Assert.IsTrue(t.Contains(string.Empty));
+
+            Assert.IsFalse(t.Contains(" "));
+            Assert.IsFalse(t.Contains(null));
+        }
+
+        [TestMethod]
         public void IntInsert()
         {
             var t = new HashTable<int>();
