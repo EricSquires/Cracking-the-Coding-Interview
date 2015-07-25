@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HashTables
 {
-    public abstract class HashTable<T> : ICollection<T>
+    public class HashTable<T> : ICollection<T>
     {
         // Don't want indices changing, so only accept this at initialization
         private readonly Func<T, int> _hashFunc;
