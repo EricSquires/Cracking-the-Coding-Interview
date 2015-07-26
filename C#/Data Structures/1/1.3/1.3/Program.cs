@@ -10,6 +10,25 @@ namespace _1._3
     {
         static void Main(string[] args)
         {
+            IAnswer answer = new AnswerSelfImplemented();
+
+            string input;
+
+            do
+            {
+                Console.Write("Enter string: ");
+                input = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(input))
+                {
+                    Console.WriteLine("Exiting...");
+                }
+                else
+                {
+                    Console.WriteLine($"URLify('{input}'): {answer.URLify(input)}");
+                }
+            }
+            while (!string.IsNullOrWhiteSpace(input));
         }
     }
 }
