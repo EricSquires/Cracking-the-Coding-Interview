@@ -14,8 +14,8 @@ namespace _1._3
             {
                 if(txt[i] == ' ')
                 {
-                    txt.Remove(i, 1);
-                    txt.Insert(i, "%20");
+                    txt = txt.Remove(i, 1);
+                    txt = txt.Insert(i, "%20");
                 }
             }
 
