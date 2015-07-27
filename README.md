@@ -9,7 +9,7 @@ Progress:
   1. **Is Unique**:  Solved - 1<sup>st</sup> pass
   2. **Check Permutation**: Solved - 1<sup>st</sup> pass
   3. **URLify**: Solved - 1<sup>st</sup> pass
-  4. **Palindrome Permutation**:
+  4. **Palindrome Permutation**: Solved - 1<sup>st</sup> pass
   5. **One Away**:
   6. **String Compression**:
   7. **Rotate Matrix**:
