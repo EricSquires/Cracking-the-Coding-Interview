@@ -8,7 +8,7 @@ Progress:
 1. Arrays and Strings
   1. **Is Unique**:  Solved - 1<sup>st</sup> pass
   2. **Check Permutation**: Solved - 1<sup>st</sup> pass
-  3. **URLify**:
+  3. **URLify**: Solved - 1<sup>st</sup> pass
   4. **Palindrome Permutation**:
   5. **One Away**:
   6. **String Compression**:
