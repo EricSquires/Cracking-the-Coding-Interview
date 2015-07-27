@@ -36,8 +36,8 @@ namespace Tests
         {
             foreach(var test in tests)
             {
-                Assert.AreEqual(answer.IsPalindrome(test.Input), test.IsPalindrome);
-                Assert.AreEqual(answer.IsPalindromePermutation(test.Input), test.IsPalindromePermutation);
+                Assert.AreEqual(answer.IsPalindrome(test.Input), test.IsPalindrome, $"IsPalindrome('{test.Input}') expected: {test.IsPalindrome}");
+                Assert.AreEqual(answer.IsPalindromePermutation(test.Input), test.IsPalindromePermutation, $"IsPalindromePermutation('{test.Input}') expected: {test.IsPalindromePermutation}");
             }
         }
     }
