@@ -28,6 +28,11 @@ namespace _1._4
 
         public bool IsPalindrome(string txt)
         {
+            if(txt == null)
+            {
+                return true;
+            }
+
             for (var i = 0; i < txt.Length / 2; i++)
             {
                 if (txt[i] != txt[txt.Length - (i + 1)])
