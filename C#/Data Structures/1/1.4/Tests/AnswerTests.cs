@@ -14,7 +14,7 @@ namespace Tests
             new TestData(string.Empty, true, true),
 
             new TestData("a", true, true),
-            new TestData("bac", true, true),
+            new TestData("bab", true, true),
             new TestData("cbaabc", true, true),
             new TestData("aabccb", false, true),
             new TestData("dbabd", true, true),
