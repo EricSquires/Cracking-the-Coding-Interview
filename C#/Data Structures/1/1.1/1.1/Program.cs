@@ -9,6 +9,7 @@ namespace _1._1
 {
     class Program
     {
+        [ExcludeFromCodeCoverage]
         static void Main(string[] args)
         {
             IUniqueTester tester = new UniqueNaive();
