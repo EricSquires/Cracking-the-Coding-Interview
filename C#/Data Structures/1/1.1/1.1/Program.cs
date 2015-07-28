@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1._1.Solutions;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -39,7 +40,8 @@ namespace _1._1
             var testObjects = new IUniqueTester[]
                 {
                     new UniqueNaive(),
-                    new UniqueSet()
+                    new UniqueSet(),
+                    new UniqueBitVector()
                 };
 
             foreach(var testObj in testObjects)
