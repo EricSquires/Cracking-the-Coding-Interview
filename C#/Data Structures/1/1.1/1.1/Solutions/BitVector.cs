@@ -40,9 +40,14 @@ namespace _1._1.Solutions
 
         private bool Add(ref UInt64 vector, int value)
         {
-            UInt64 oldVal = vector;
+            if((vector & ((UInt64)1 << value)) > 0)
+            {
+                return false;
+            }
+
             vector |= (UInt64)1 << value;
-            return oldVal != vector;
+
+            return true;
         }
     }
 }
