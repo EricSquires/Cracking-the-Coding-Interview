@@ -97,7 +97,19 @@ namespace _1._1
 
             if(!isUnique)
             {
-                array[array.Length - 1] = array[0];
+                // Generate a couple random indices to ensure the string isn't unique
+                int ind1, ind2;
+                var rnd = new Random();
+
+                ind1 = rnd.Next(array.Length);
+
+                do
+                {
+                    ind2 = rnd.Next(array.Length);
+                }
+                while(ind2 == ind1);
+
+                array[ind1] = array[ind2];
             }
 
             return new string(array);
