@@ -8,6 +8,8 @@ namespace _1._1
 {
     public class UniqueSet : IUniqueTester
     {
+        private readonly HashSet<char> _set = new HashSet<char>();
+
         // O(n) thanks to O(1) insertion into the set
         public bool IsUnique(string txt)
         {
@@ -16,11 +18,11 @@ namespace _1._1
                 return true;
             }
 
-            var set = new HashSet<char>();
+            _set.Clear();
 
             foreach(var c in txt)
             {
-                if(!set.Add(c))
+                if(!_set.Add(c))
                 {
                     return false;
                 }
