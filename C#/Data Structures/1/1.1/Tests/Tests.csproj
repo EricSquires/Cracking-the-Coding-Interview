@@ -55,6 +55,7 @@
     <Compile Include="UniqueNaiveTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBase.cs" />
+    <Compile Include="UniqueSetTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\1.1\1.1.csproj">
