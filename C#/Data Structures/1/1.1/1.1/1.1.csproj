@@ -43,11 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IUniqueTester.cs" />
+    <Compile Include="Solutions\IUniqueTester.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UniqueNaive.cs" />
-    <Compile Include="UniqueSet.cs" />
+    <Compile Include="Solutions\UniqueBitVector.cs" />
+    <Compile Include="Solutions\UniqueNaive.cs" />
+    <Compile Include="Solutions\UniqueSet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

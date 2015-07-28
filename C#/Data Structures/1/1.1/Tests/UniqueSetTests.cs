@@ -1,4 +1,4 @@
-﻿using _1._1;
+﻿using _1._1.Solutions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests

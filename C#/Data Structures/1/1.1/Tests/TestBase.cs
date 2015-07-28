@@ -1,6 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using _1._1;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using _1._1.Solutions;
 
 namespace Tests
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1._1
+namespace _1._1.Solutions
 {
     public class UniqueNaive : IUniqueTester
     {
