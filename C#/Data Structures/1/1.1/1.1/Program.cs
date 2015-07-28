@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace _1._1
     {
         static void Main(string[] args)
         {
+            IUniqueTester tester = new UniqueNaive();
             string input;
 
             do
@@ -23,7 +25,7 @@ namespace _1._1
                 }
                 else
                 {
-                    Console.WriteLine($"'{input}': is {(input.IsUnique() ? "" : "NOT ")}unique");
+                    Console.WriteLine($"'{input}': is {(tester.IsUnique(input) ? "" : "NOT ")}unique");
                 }
             }
             while(!string.IsNullOrWhiteSpace(input));
