@@ -30,4 +30,24 @@ As expected, the set implementation significantly outperforms the naive solution
 
 **UniqueBitVector Update**
 
-I would have expected the bit vector implementation to have a bit more parity with the set solution than is demonstated in testing. The bit vector operates as a set and while I expect that the .NET HashSet is far more optimized than my hand written BitVector class, I'm surprised to see such a desparity. That being said, I should move on to other problems so I'm willing to chalk this up to "needs optimization" for now.
+I would have expected the bit vector implementation to have a bit more parity with the set solution than is demonstated in testing. The bit vector operates as a set and while I expect that the .NET HashSet is far more optimized than my hand written BitVector class, I'm surprised to see such a desparity.
+
+~~That being said, I should move on to other problems so I'm willing to chalk this up to "needs optimization" for now.~~
+
+As soon as I committed that last sentence, I had a thought. I was testing in a debug build and with my project targeting Any CPU. First, lets see the results from switching to release mode:
+
+| Solution        | Unique String | Non-Unique String |
+|-----------------|---------------|-------------------|
+| UniqueNaive     | 0.00251 ms    | 0.00119 ms        |
+| UniqueSet       | 0.00104 ms    | 0.00074 ms        |
+| UniqueBitVector | 0.00089 ms    | 0.00065 ms        |
+
+Now I'm seeing the speed I expected from UniqueBitVector. It uses two 64-bit integers to support a 128 character range though, so let's make sure the program is built in 64-bit mode to ensure we're taking advantage of the processor architecture and see what happens:
+
+| Solution        | Unique String | Non-Unique String |
+|-----------------|---------------|-------------------|
+| UniqueNaive     | 0.00296 ms    | 0.00125 ms        |
+| UniqueSet       | 0.00089 ms    | 0.00063 ms        |
+| UniqueBitVector | 0.00052 ms    | 0.00037 ms        |
+
+And there we go. Any CPU targets 32-bit by default, so it was likely cramming those 64-bit ints into 32-bit ones, ruining the performance of my BitVector class.
