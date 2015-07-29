@@ -30,4 +30,4 @@ As expected, the set implementation significantly outperforms the naive solution
 
 **UniqueBitVector Update**
 
-I would have expected the bit vector implementation to have a bit more parity with the set solution than is demonstated in testing. The bit vector operates as a set and while I expect that the .NET HashSet is far more optimized than my hand written BitVector class, I'm surprised to see such a desparity.
+I would have expected the bit vector implementation to have a bit more parity with the set solution than is demonstated in testing. The bit vector operates as a set and while I expect that the .NET HashSet is far more optimized than my hand written BitVector class, I'm surprised to see such a desparity. That being said, I should move on to other problems so I'm willing to chalk this up to "needs optimization" for now.
