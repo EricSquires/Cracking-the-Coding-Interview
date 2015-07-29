@@ -29,4 +29,5 @@ In order to evaluate the performance of each implementation, I wrote up some per
 As expected, the set implementation significantly outperforms the naive solution. Not much to say on that. Water is wet, sky is blue, sets are better than nested loops when you're evaluating uniqueness.
 
 **UniqueBitVector Update**
+
 I would have expected the bit vector implementation to have a bit more parity with the set solution than is demonstated in testing. The bit vector operates as a set and while I expect that the .NET HashSet is far more optimized than my hand written BitVector class, I'm surprised to see such a desparity.
