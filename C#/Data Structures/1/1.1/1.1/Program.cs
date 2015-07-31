@@ -1,4 +1,5 @@
 ﻿using _1._1.Solutions;
+using PerformanceTesting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace _1._1
 {
-    class Program
+    class Program : PerformanceProgramBase
     {
         private static readonly char[] _CHARACTERS = new char[]
             {
@@ -19,23 +20,16 @@ namespace _1._1
                 '`', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', '\\', '|', ';', ':', '\'', '"', ',', '<', '.', '>', '/', '?'
             };
 
-        private const int _NUM_TESTS = 100000;
         private const int _TEST_STR_LEN = 60;
 
         [ExcludeFromCodeCoverage]
         static void Main(string[] args)
         {
-            if(args.Length > 0 && args[0] == "-i")
-            {
-                InteractiveMode();
-            }
-            else
-            {
-                TimingMode();
-            }
+            var obj = new Program();
+            obj.Run(args);
         }
 
-        private static void TimingMode()
+        protected override void TimingMode(string[] args)
         {
             var testObjects = new IUniqueTester[]
                 {
@@ -46,51 +40,14 @@ namespace _1._1
 
             foreach(var testObj in testObjects)
             {
-                TimeExecution(testObj);
+                double avgExec = Time(testObj.IsUnique, (int _) => GetTestString(_TEST_STR_LEN, true));
+                Console.WriteLine($"{testObj.GetType().ToString(),40} unique     : {avgExec:N5} ms");
+
+                avgExec = Time(testObj.IsUnique, (int _) => GetTestString(_TEST_STR_LEN, false));
+                Console.WriteLine($"{testObj.GetType().ToString(),40} non-unique : {avgExec:N5} ms");
             }
 
             Console.ReadKey();
-        }
-
-        private static void TimeExecution(IUniqueTester testObject)
-        {
-            // Run through a couple times just to try to get the JIT performance hit out of the way
-            testObject.IsUnique(GetTestString(2, true));
-            testObject.IsUnique(GetTestString(2, false));
-
-            var watch = new Stopwatch();
-
-            for(var i = 0; i < _NUM_TESTS; i++)
-            {
-                string txt = GetTestString(_TEST_STR_LEN, true);
-                watch.Start();
-                bool res = testObject.IsUnique(txt);
-                watch.Stop();
-
-                if (!res)
-                {
-                    Console.WriteLine($"ERROR: expected unique '{txt}'");
-                }
-            }
-
-            Console.WriteLine($"{testObject.GetType().ToString(),40} unique     : {((double)watch.ElapsedMilliseconds / _NUM_TESTS),10} ms");
-            
-            watch.Reset();
-
-            for (var i = 0; i < _NUM_TESTS; i++)
-            {
-                string txt = GetTestString(_TEST_STR_LEN, false);
-                watch.Start();
-                bool res = testObject.IsUnique(txt);
-                watch.Stop();
-
-                if (res)
-                {
-                    Console.WriteLine($"ERROR: expected not unique '{txt}'");
-                }
-            }
-
-            Console.WriteLine($"{testObject.GetType().ToString(),40} non-unique : {(double)watch.ElapsedMilliseconds / _NUM_TESTS,10} ms");
         }
 
         private static string GetTestString(int length, bool isUnique)
@@ -133,7 +90,7 @@ namespace _1._1
             return array;
         }
 
-        private static void InteractiveMode()
+        protected override void InteractiveMode(string[] args)
         {
             IUniqueTester tester = new UniqueSet();
             string input;
