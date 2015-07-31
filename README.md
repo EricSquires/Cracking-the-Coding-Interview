@@ -7,7 +7,7 @@ Progress:
 
 1. Arrays and Strings
   1. **Is Unique**:  Solved
-  2. **Check Permutation**: Solved - 1<sup>st</sup> pass
+  2. **Check Permutation**: Solved
   3. **URLify**: Solved - 1<sup>st</sup> pass
   4. **Palindrome Permutation**: Solved - 1<sup>st</sup> pass
   5. **One Away**:
