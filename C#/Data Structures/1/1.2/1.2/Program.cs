@@ -105,8 +105,23 @@ namespace _1._2
 
         private string Permute(string txt)
         {
-            int idx = _rand.Next(txt.Length);
-            return txt.Substring(0, idx) + txt.Substring(idx, txt.Length - idx);
+            return new string(Shuffle(txt.ToArray()));
+        }
+        
+        public static T[] Shuffle<T>(T[] array)
+        {
+            var rnd = new Random();
+
+            int n = array.Length;
+            while (n > 1)
+            {
+                int k = rnd.Next(n--);
+                T temp = array[n];
+                array[n] = array[k];
+                array[k] = temp;
+            }
+
+            return array;
         }
     }
 }
