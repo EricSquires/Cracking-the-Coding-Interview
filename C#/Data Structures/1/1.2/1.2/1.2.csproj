@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Answers\PermutationNaive.cs" />
     <Compile Include="Answers\IPermutationChecker.cs" />
+    <Compile Include="Answers\PermutationSort.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

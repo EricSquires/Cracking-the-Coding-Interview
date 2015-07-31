@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _1._2.Answers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,16 +46,17 @@ namespace _1._2
         {
             IPermutationChecker[] testObjs =
                 {
-                    new PermutationNaive()
+                    new PermutationNaive(),
+                    new PermutationSort()
                 };
 
             foreach(var obj in testObjs)
             {
                 double avgTime = Time((Tuple<string, string> param) => obj.IsPermutation(param.Item1, param.Item2), (int _) => GetParam(true));
-                Console.WriteLine($"{obj.GetType().ToString(),40} permutation: {avgTime:N5} ms");
+                Console.WriteLine($"{obj.GetType().ToString(),40} permutation    : {avgTime:N5} ms");
 
                 avgTime = Time((Tuple<string, string> param) => obj.IsPermutation(param.Item1, param.Item2), (int _) => GetParam(false));
-                Console.WriteLine($"{obj.GetType().ToString(),40} permutation: {avgTime:N5} ms");
+                Console.WriteLine($"{obj.GetType().ToString(),40} non-permutation: {avgTime:N5} ms");
             }
 
             Console.ReadKey();
