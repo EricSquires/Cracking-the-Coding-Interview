@@ -50,9 +50,14 @@ namespace _1._2
 
             foreach(var obj in testObjs)
             {
-                Time((Tuple<string, string> param) => obj.IsPermutation(param.Item1, param.Item2), (int _) => GetParam(true));
-                Time((Tuple<string, string> param) => obj.IsPermutation(param.Item1, param.Item2), (int _) => GetParam(false));
+                double avgTime = Time((Tuple<string, string> param) => obj.IsPermutation(param.Item1, param.Item2), (int _) => GetParam(true));
+                Console.WriteLine($"{obj.GetType().ToString(),40} permutation: {avgTime:N5} ms");
+
+                avgTime = Time((Tuple<string, string> param) => obj.IsPermutation(param.Item1, param.Item2), (int _) => GetParam(false));
+                Console.WriteLine($"{obj.GetType().ToString(),40} permutation: {avgTime:N5} ms");
             }
+
+            Console.ReadKey();
         }
 
         private Tuple<string, string> GetParam(bool permute)
@@ -78,8 +83,8 @@ namespace _1._2
             const int _STRING_MIN = 10;
             const int _STRING_MAX = 50;
 
-            const int _CHAR_MIN = 'a';
-            const int _CHAR_MAX = 'Z';
+            const int _CHAR_MIN = 'A';
+            const int _CHAR_MAX = 'z';
 
             string ret = string.Empty;
 
