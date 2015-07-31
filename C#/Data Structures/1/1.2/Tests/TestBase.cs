@@ -25,6 +25,8 @@ namespace Tests
             Assert.IsTrue(TestObject.IsPermutation("ab", "ab"));
             Assert.IsTrue(TestObject.IsPermutation("ab", "ba"));
 
+            Assert.IsTrue(TestObject.IsPermutation("abc", "bac"));
+
             Assert.IsTrue(TestObject.IsPermutation("abcde", "abcde"));
             Assert.IsTrue(TestObject.IsPermutation("abcde", "eabcd"));
             Assert.IsTrue(TestObject.IsPermutation("abcde", "deabc"));
@@ -39,7 +41,7 @@ namespace Tests
             Assert.IsFalse(TestObject.IsPermutation("a", string.Empty));
             Assert.IsFalse(TestObject.IsPermutation("a", "b"));
 
-            Assert.IsFalse(TestObject.IsPermutation("abc", "bac"));
+            Assert.IsFalse(TestObject.IsPermutation("abc", "abd"));
             Assert.IsFalse(TestObject.IsPermutation("abc", "abcd"));
         }
     }

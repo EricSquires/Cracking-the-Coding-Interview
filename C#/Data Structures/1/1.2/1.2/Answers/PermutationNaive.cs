@@ -8,12 +8,11 @@ namespace _1._2.Answers
 {
     public class PermutationNaive : IPermutationChecker
     {
-        // Naive solution
         public bool IsPermutation(string s1, string s2)
         {
-            if(s1 == s2)
+            if(s1 == null || s2 == null)
             {
-                return true;
+                return s1 == s2;
             }
 
             // If the strings aren't of equal length, one cannot be a permutation of the other.
@@ -24,15 +23,30 @@ namespace _1._2.Answers
                 return false;
             }
 
-            for(var i = 1; i < s2.Length; i++)
+            int[] count1 = CountChars(s1);
+            int[] count2 = CountChars(s2);
+
+            for(var i = 0; i < count1.Length; i++)
             {
-                if(s1 == s2.Substring(i, s2.Length - i) + s2.Substring(0, i))
+                if(count1[i] != count2[i])
                 {
-                    return true;
+                    return false;
                 }
             }
 
-            return false;
+            return true;
+        }
+
+        private int[] CountChars(string txt)
+        {
+            var ret = new int[128];
+
+            foreach(var c in txt)
+            {
+                ret[c]++;
+            }
+
+            return ret;
         }
     }
 }
