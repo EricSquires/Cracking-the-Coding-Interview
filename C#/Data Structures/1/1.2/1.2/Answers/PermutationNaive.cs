@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace _1._2
 {
-    public static class Answer
+    public class PermutationNaive : IPermutationChecker
     {
         // Naive solution
-
-        /// <summary>
-        /// Returns true if this string (<paramref name="s1"/>) is a permutation of the argument string (<paramref name="s2"/>)
-        /// </summary>
-        public static bool IsPermutation(this string s1, string s2)
+        public bool IsPermutation(string s1, string s2)
         {
             if(s1 == s2)
             {
