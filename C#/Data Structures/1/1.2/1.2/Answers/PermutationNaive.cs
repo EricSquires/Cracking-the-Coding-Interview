@@ -16,9 +16,7 @@ namespace _1._2.Answers
             }
 
             // If the strings aren't of equal length, one cannot be a permutation of the other.
-            // Use the new null propagation operator here to handle cases where one of the strings is null. The prior equality check
-            // will handle the case where both are null so null propagation operator means one being null triggers this false return.
-            if(s2?.Length != s1?.Length)
+            if(s2.Length != s1.Length)
             {
                 return false;
             }
