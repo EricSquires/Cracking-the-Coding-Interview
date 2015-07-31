@@ -74,7 +74,11 @@ namespace _1._2
             }
             else
             {
-                input2 = GenerateTestString();
+                do
+                {
+                    input2 = GenerateTestString();
+                }
+                while(input1 == input2);
             }
 
             return new Tuple<string, string>(input1, input2);
