@@ -10,6 +10,7 @@ namespace _1._2
     class Program : PerformanceTesting.PerformanceProgramBase
     {
         private readonly Random _rand = new Random();
+        private readonly IPermutationChecker _checker = new PermutationNaive();
 
         static void Main(string[] args)
         {
@@ -78,7 +79,7 @@ namespace _1._2
                 {
                     input2 = GenerateTestString();
                 }
-                while(input1 == input2);
+                while(_checker.IsPermutation(input1, input2));
             }
 
             return new Tuple<string, string>(input1, input2);
