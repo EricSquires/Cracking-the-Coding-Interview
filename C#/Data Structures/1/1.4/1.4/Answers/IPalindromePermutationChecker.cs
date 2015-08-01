@@ -9,6 +9,5 @@ namespace _1._4.Answers
     public interface IPalindromePermutationChecker
     {
         bool IsPalindromePermutation(string txt);
-        bool IsPalindrome(string txt);
     }
 }

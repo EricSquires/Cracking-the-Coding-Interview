@@ -26,7 +26,7 @@ namespace _1._4.Answers
             return false;
         }
 
-        public bool IsPalindrome(string txt)
+        private bool IsPalindrome(string txt)
         {
             if(txt == null)
             {
