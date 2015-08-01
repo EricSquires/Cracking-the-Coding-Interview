@@ -32,7 +32,7 @@ namespace Tests
             RunTest(new AnswerNaive(), _TESTS);
         }
 
-        private void RunTest(IAnswer answer, IEnumerable<TestData> tests)
+        private void RunTest(IPalindromePermutationChecker answer, IEnumerable<TestData> tests)
         {
             foreach(var test in tests)
             {

@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnswerNaive.cs" />
-    <Compile Include="IAnswer.cs" />
+    <Compile Include="Answers\PalPermNaive.cs" />
+    <Compile Include="Answers\IPalindromePermutationChecker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

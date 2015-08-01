@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1._4
+namespace _1._4.Answers
 {
-    public interface IAnswer
+    public interface IPalindromePermutationChecker
     {
         bool IsPalindromePermutation(string txt);
         bool IsPalindrome(string txt);
