@@ -30,6 +30,8 @@ namespace Tests
             Assert.IsTrue(TestObject.IsPalindromePermutation("abddb"));
             Assert.IsTrue(TestObject.IsPalindromePermutation("aaaa"));
             Assert.IsTrue(TestObject.IsPalindromePermutation("aaaaa"));
+            Assert.IsTrue(TestObject.IsPalindromePermutation("ababc"));
+            Assert.IsTrue(TestObject.IsPalindromePermutation("acbbac"));
         }
 
         [TestMethod]
