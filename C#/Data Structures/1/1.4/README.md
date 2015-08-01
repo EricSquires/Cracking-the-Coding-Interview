@@ -10,11 +10,15 @@ My initial thought was to sort the string and check for more than one character 
 
 Since my intial solution is really just maintaining a count of all characters, my second pass at the problem uses a bit vector so I can run through the string in one pass to gather the counts. After the counting pass, I iterate over the counts and ensure at most one character has an odd count.
 
+###Testing
+
+Each solution is tested 100K times and runs on a randomly generated string between 20 and 50 characters in length. If a palindrome is required, we simply generate the first half, reverse it and tack it onto the end of the string.
+
 #####Results
 
 | Solution         | Permutation | Non-Permutation |
 |------------------|-------------|-----------------|
-| PalPermSort      | 0.00162 ms  | 0.00152 ms      |
-| PalPermBitVector | 0.00037 ms  | 0.00020 ms      |
+| PalPermSort      | 0.00339 ms  | 0.00154 ms      |
+| PalPermBitVector | 0.00023 ms  | 0.00021 ms      |
 
 As expected, the bit vector solution is much faster.
