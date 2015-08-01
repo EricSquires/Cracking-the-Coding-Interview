@@ -57,6 +57,7 @@
     <Compile Include="TestBase.cs" />
     <Compile Include="NaiveTests.cs" />
     <Compile Include="SortTests.cs" />
+    <Compile Include="BitVectorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\1.4\1.4.csproj">

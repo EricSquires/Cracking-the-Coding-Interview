@@ -42,7 +42,8 @@ namespace _1._4
             var testObjs = new IPalindromePermutationChecker[]
                 {
                     new PalPermNaive(),
-                    new PalPermSort()
+                    new PalPermSort(),
+                    new PalPermBitVector()
                 };
 
             foreach(var testObj in testObjs)
