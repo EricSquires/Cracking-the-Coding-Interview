@@ -20,7 +20,7 @@ namespace _1._4
 
         protected override void InteractiveMode(string[] args)
         {
-            IPalindromePermutationChecker checker = new PalPermNaive();
+            IPalindromePermutationChecker checker = new PalPermBitVector();
 
             string input;
 
@@ -41,7 +41,6 @@ namespace _1._4
         {
             var testObjs = new IPalindromePermutationChecker[]
                 {
-                    new PalPermNaive(),
                     new PalPermSort(),
                     new PalPermBitVector()
                 };

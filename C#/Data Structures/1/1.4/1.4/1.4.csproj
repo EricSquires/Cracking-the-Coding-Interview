@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Answers\PalPermNaive.cs" />
     <Compile Include="Answers\IPalindromePermutationChecker.cs" />
     <Compile Include="Answers\PalPermBitVector.cs" />
     <Compile Include="Answers\PalPermSort.cs" />
