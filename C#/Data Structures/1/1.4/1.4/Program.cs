@@ -84,8 +84,8 @@ namespace _1._4
                 {
                     ret += (char)_rand.Next(_CHAR_MIN, _CHAR_MAX);
                 }
-
-                ret += secondHalf;
+                
+                ret += secondHalf.Reverse();
             }
 
             return ret;
