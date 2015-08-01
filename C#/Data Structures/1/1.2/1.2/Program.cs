@@ -77,7 +77,7 @@ namespace _1._2
             {
                 do
                 {
-                    input2 = GenerateTestString();
+                    input2 = GenerateTestString(input1.Length);
                 }
                 while(_checker.IsPermutation(input1, input2));
             }
@@ -85,7 +85,7 @@ namespace _1._2
             return new Tuple<string, string>(input1, input2);
         }
 
-        private string GenerateTestString()
+        private string GenerateTestString(int? length = null)
         {
             const int _STRING_MIN = 10;
             const int _STRING_MAX = 50;
@@ -95,7 +95,7 @@ namespace _1._2
 
             string ret = string.Empty;
 
-            int len = _rand.Next(_STRING_MIN, _STRING_MAX + 1);
+            int len = length ?? _rand.Next(_STRING_MIN, _STRING_MAX + 1);
             for(var i = 0; i < len; i++)
             {
                 ret += (char)_rand.Next(_CHAR_MIN, _CHAR_MAX + 1);
