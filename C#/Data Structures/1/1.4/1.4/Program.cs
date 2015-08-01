@@ -39,9 +39,10 @@ namespace _1._4
 
         protected override void TimingMode(string[] args)
         {
-            IPalindromePermutationChecker[] testObjs = new[]
+            var testObjs = new IPalindromePermutationChecker[]
                 {
-                    new PalPermNaive()
+                    new PalPermNaive(),
+                    new PalPermSort()
                 };
 
             foreach(var testObj in testObjs)
