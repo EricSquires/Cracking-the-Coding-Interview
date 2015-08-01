@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1._3
 {
-    public interface IAnswer
+    public interface IURLifier
     {
         /// <summary>
         /// Despite its name, this function only replaces spaces with %20.

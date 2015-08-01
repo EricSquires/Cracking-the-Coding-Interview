@@ -22,7 +22,7 @@ namespace _1._3
 
         protected override void InteractiveMode(string[] args)
         {
-            IAnswer answer = new AnswerSelfImplemented();
+            IURLifier answer = new URLSelfImplemented();
 
             string input;
 
@@ -45,10 +45,10 @@ namespace _1._3
 
         protected override void TimingMode(string[] args)
         {
-            var testObjs = new IAnswer[]
+            var testObjs = new IURLifier[]
                 {
-                    new AnswerRealWorld(),
-                    new AnswerSelfImplemented()
+                    new URLRealWorld(),
+                    new URLSelfImplemented()
                 };
 
             foreach(var testObj in testObjs)

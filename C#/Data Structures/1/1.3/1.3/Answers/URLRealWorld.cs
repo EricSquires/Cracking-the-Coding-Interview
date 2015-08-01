@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1._3
 {
-    public class AnswerRealWorld : IAnswer
+    public class URLRealWorld : IURLifier
     {
         public string URLify(string txt)
         {

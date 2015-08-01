@@ -21,16 +21,16 @@ namespace Tests
         [TestMethod]
         public void AnswerRealWorldTests()
         {
-            RunTests(new AnswerRealWorld(), _INPUT_OUTPUT);
+            RunTests(new URLRealWorld(), _INPUT_OUTPUT);
         }
 
         [TestMethod]
         public void AnswerSelfImplementedTests()
         {
-            RunTests(new AnswerSelfImplemented(), _INPUT_OUTPUT);
+            RunTests(new URLSelfImplemented(), _INPUT_OUTPUT);
         }
 
-        private void RunTests(IAnswer answer, IEnumerable<Tuple<string, string>> inputOutput)
+        private void RunTests(IURLifier answer, IEnumerable<Tuple<string, string>> inputOutput)
         {
             foreach(var vals in inputOutput)
             {

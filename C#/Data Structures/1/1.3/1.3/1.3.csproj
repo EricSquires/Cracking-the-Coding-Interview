@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnswerRealWorld.cs" />
-    <Compile Include="AnswerSelfImplemented.cs" />
-    <Compile Include="IAnswer.cs" />
+    <Compile Include="Answers\URLRealWorld.cs" />
+    <Compile Include="Answers\URLSelfImplemented.cs" />
+    <Compile Include="Answers\IURLifier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
