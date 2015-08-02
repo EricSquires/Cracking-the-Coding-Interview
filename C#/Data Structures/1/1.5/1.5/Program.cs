@@ -28,19 +28,22 @@ namespace _1_5
         {
             IOneAwayChecker checker = new OneAwaySimple();
 
-            string input;
+            string input1, input2;
 
             do
             {
-                Console.Write("Enter string: ");
-                input = Console.ReadLine();
+                Console.Write("Enter first string: ");
+                input1 = Console.ReadLine();
 
-                //if(!string.IsNullOrWhiteSpace(input))
-                //{
-                //    Console.WriteLine($"'{input}': {checker.IsPalindromePermutation(input)}");
-                //}
+                Console.Write("Enter second string: ");
+                input2 = Console.ReadLine();
+
+                if (!string.IsNullOrWhiteSpace(input1) || !string.IsNullOrWhiteSpace(input2))
+                {
+                    Console.WriteLine($"'{input1}', '{input2}': {checker.IsOneAway(input1, input2)}");
+                }
             }
-            while (string.IsNullOrWhiteSpace(input));
+            while (string.IsNullOrWhiteSpace(input1) && string.IsNullOrWhiteSpace(input2));
         }
 
         protected override void TimingMode(string[] args)
