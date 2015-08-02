@@ -10,6 +10,11 @@ namespace _1._6.Answes
     {
         public string Compress(string txt)
         {
+            if(string.IsNullOrEmpty(txt))
+            {
+                return txt;
+            }
+
             var ret = new StringBuilder();
 
             int count = 0;
