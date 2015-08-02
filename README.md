@@ -10,8 +10,8 @@ Progress:
   2. **Check Permutation**: Solved
   3. **URLify**: Solved - 1<sup>st</sup> pass
   4. **Palindrome Permutation**: Solved - 1<sup>st</sup> pass
-  5. **One Away**:
-  6. **String Compression**:
+  5. **One Away**: Solved - 1<sup>st</sup> pass
+  6. **String Compression**: Solved - 1<sup>st</sup> pass
   7. **Rotate Matrix**:
   8. **Zero Matrix**:
   9. **String Rotation**:
