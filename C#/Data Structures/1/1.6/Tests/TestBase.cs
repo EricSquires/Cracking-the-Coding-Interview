@@ -35,5 +35,11 @@ namespace Tests
             Assert.AreEqual(TestObject.Compress("aabaabcaac"), "a2ba2bca2c");
             Assert.AreEqual(TestObject.Compress("aabcccccaaa"), "a2bc5a3");
         }
+
+        [TestMethod]
+        public void LengthOneStrings()
+        {
+            Assert.AreEqual(TestObject.Compress("a"), "a");
+        }
     }
 }
