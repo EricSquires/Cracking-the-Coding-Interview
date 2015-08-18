@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _1._7.DataStructures
 {
-    public class Matrix<T>
+    public class Matrix<T> : IEquatable<Matrix<T>> where T : IEquatable<T>
     {
         private readonly T[,] _matrix;
 
@@ -50,6 +50,32 @@ namespace _1._7.DataStructures
             {
                 _matrix[(int)((double)i/Width), i % Width] = items[i];
             }
+        }
+
+        public override bool Equals(object obj)
+        {
+            return Equals((Matrix<T>)obj);
+        }
+
+        public bool Equals(Matrix<T> other)
+        {
+            if (other.Width != Width || other.Height != Height)
+            {
+                return false;
+            }
+
+            for (var i = 0; i < Height; i++)
+            {
+                for (var j = 0; j < Width; j++)
+                {
+                    if (!other[i, j].Equals(this[i, j]))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
         }
     }
 }
