@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace _1._7.DataStructures
 {
+    [DebuggerDisplay("{ToString()}")]
     public struct Pixel : IEquatable<Pixel>
     {
         public byte Red { get; set; }
@@ -41,6 +43,11 @@ namespace _1._7.DataStructures
         public bool Equals(Pixel other)
         {
             return other.Red == Red && other.Green == Green && other.Blue == Blue && other.Alpha == Alpha;
+        }
+
+        public override string ToString()
+        {
+            return $"{Red}, {Green}, {Blue}, {Alpha}";
         }
     }
 }

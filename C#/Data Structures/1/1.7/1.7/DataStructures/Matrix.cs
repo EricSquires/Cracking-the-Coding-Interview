@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace _1._7.DataStructures
 {
+    [DebuggerDisplay("{ToString()}")]
     public class Matrix<T> : IEquatable<Matrix<T>> where T : IEquatable<T>
     {
         private readonly T[,] _matrix;
@@ -64,9 +66,9 @@ namespace _1._7.DataStructures
                 return false;
             }
 
-            for (var i = 0; i < Height; i++)
+            for (var i = 0; i < Width; i++)
             {
-                for (var j = 0; j < Width; j++)
+                for (var j = 0; j < Height; j++)
                 {
                     if (!other[i, j].Equals(this[i, j]))
                     {
@@ -76,6 +78,33 @@ namespace _1._7.DataStructures
             }
 
             return true;
+        }
+
+        public override string ToString()
+        {
+            var ret = string.Empty;
+
+            for(var i = 0; i < Width; i++)
+            {
+               for(var j = 0; j < Height; j++)
+                {
+                    if(j == 0)
+                    {
+                        if(i != 0)
+                        {
+                            ret += Environment.NewLine;
+                        }
+                    }
+                    else
+                    {
+                        ret += ", ";
+                    }
+
+                    ret += $"[{this[i,j]}]";
+                } 
+            }
+
+            return ret;
         }
     }
 }
