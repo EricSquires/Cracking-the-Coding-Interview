@@ -17,7 +17,7 @@ namespace _1._7.Answers
             {
                 for (var j = 0; j < input.Width; j++)
                 {
-                    output[j, output.Width - (i + 1)] = input[i, j];
+                    output[j, i] = input[i, input.Width - (j + 1)];
                 }
             }
 
@@ -28,11 +28,11 @@ namespace _1._7.Answers
         {
             var output = new Matrix<Pixel>(input.Width);
 
-            for (var i = input.Width - 1; i >= 0; i--)
+            for (var i = 0; i < input.Width; i++)
             {
-                for (var j = 0; j < input.Width; j++)
+                for (var j = input.Width - 1; j >= 0; j--)
                 {
-                    output[j, output.Width - (i + 1)] = input[i, j];
+                    output[i, input.Width - (j + 1)] = input[j, i];
                 }
             }
 
