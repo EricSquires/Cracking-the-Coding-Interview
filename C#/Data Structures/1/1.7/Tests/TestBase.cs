@@ -8,15 +8,6 @@ namespace Tests
     [TestClass]
     public class TestBase<T> where T : IRotator, new()
     {
-        private static readonly Matrix<Pixel>[][] _TEST_DATA_ONE =
-            {
-                new[] { new Matrix<Pixel>(new Pixel(1,2,3,4)), new Matrix<Pixel>(new Pixel(1,2,3,4)) }
-            };
-        private static readonly Matrix<Pixel>[][] _TEST_DATA_TWO =
-            {
-                new[] { new Matrix<Pixel>(new Pixel(1,1,1,1), new Pixel(1,1,2,2), new Pixel(2,2,1,1), new Pixel(2,2,2,2)), new Matrix<Pixel>(new Pixel(1,2,3,4)) }
-            };
-
         protected T TestObject { get; set; }
 
         [TestInitialize]
