@@ -19,8 +19,8 @@ namespace Tests
         [TestMethod]
         public void RotateOne()
         {
-            Assert.AreEqual(TestObject.RotateCW(new Matrix<Pixel>(new Pixel(1, 2, 3, 4))), new Matrix<Pixel>(new Pixel(1, 2, 3, 4)));
-            Assert.AreEqual(TestObject.RotateCCW(new Matrix<Pixel>(new Pixel(1, 2, 3, 4))), new Matrix<Pixel>(new Pixel(1, 2, 3, 4)));
+            Assert.AreEqual(new Matrix<Pixel>(new Pixel(1, 2, 3, 4)), TestObject.RotateCW(new Matrix<Pixel>(new Pixel(1, 2, 3, 4))));
+            Assert.AreEqual(new Matrix<Pixel>(new Pixel(1, 2, 3, 4)), TestObject.RotateCCW(new Matrix<Pixel>(new Pixel(1, 2, 3, 4))));
         }
 
         [TestMethod]
@@ -38,8 +38,8 @@ namespace Tests
                 new Pixel(1, 1, 2, 2), new Pixel(2, 2, 2, 2),
                 new Pixel(1, 1, 1, 1), new Pixel(2, 2, 1, 1));
 
-            Assert.AreEqual(TestObject.RotateCW(input), outputCW);
-            Assert.AreEqual(TestObject.RotateCCW(input), outputCCW);
+            Assert.AreEqual(outputCW, TestObject.RotateCW(input));
+            Assert.AreEqual(outputCCW, TestObject.RotateCCW(input));
         }
 
         [TestMethod]
@@ -60,8 +60,8 @@ namespace Tests
                 new Pixel(1, 1, 2, 2), new Pixel(2, 2, 2, 2), new Pixel(3, 3, 2, 2),
                 new Pixel(1, 1, 1, 1), new Pixel(2, 2, 1, 1), new Pixel(3, 3, 1, 1));
 
-            Assert.AreEqual(TestObject.RotateCW(input), outputCW);
-            Assert.AreEqual(TestObject.RotateCCW(input), outputCCW);
+            Assert.AreEqual(outputCW, TestObject.RotateCW(input));
+            Assert.AreEqual(outputCCW, TestObject.RotateCCW(input));
         }
     }
 }
