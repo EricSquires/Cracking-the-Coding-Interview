@@ -9,6 +9,7 @@ namespace _1._7.Answers
 {
     public interface IRotator
     {
-        Matrix<Pixel> Rotate(Matrix<Pixel> input);
+        Matrix<Pixel> RotateCW(Matrix<Pixel> input);
+        Matrix<Pixel> RotateCCW(Matrix<Pixel> input);
     }
 }
