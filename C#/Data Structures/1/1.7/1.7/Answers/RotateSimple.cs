@@ -17,7 +17,7 @@ namespace _1._7.Answers
             {
                 for (var j = 0; j < input.Width; j++)
                 {
-                    output[j, output.Width - i] = input[i, j];
+                    output[j, output.Width - (i + 1)] = input[i, j];
                 }
             }
 
@@ -32,7 +32,7 @@ namespace _1._7.Answers
             {
                 for (var j = 0; j < input.Width; j++)
                 {
-                    output[j, output.Width - i] = input[i, j];
+                    output[j, output.Width - (i + 1)] = input[i, j];
                 }
             }
 
