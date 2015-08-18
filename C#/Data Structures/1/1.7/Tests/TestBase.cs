@@ -39,7 +39,7 @@ namespace Tests
                 new Pixel(1, 1, 1, 1), new Pixel(2, 2, 1, 1));
 
             Assert.AreEqual(TestObject.RotateCW(input), outputCW);
-            Assert.AreEqual(TestObject.RotateCW(input), outputCCW);
+            Assert.AreEqual(TestObject.RotateCCW(input), outputCCW);
         }
 
         [TestMethod]
@@ -61,7 +61,7 @@ namespace Tests
                 new Pixel(1, 1, 1, 1), new Pixel(2, 2, 1, 1), new Pixel(3, 3, 1, 1));
 
             Assert.AreEqual(TestObject.RotateCW(input), outputCW);
-            Assert.AreEqual(TestObject.RotateCW(input), outputCCW);
+            Assert.AreEqual(TestObject.RotateCCW(input), outputCCW);
         }
     }
 }
