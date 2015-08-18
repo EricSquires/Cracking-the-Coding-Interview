@@ -84,9 +84,9 @@ namespace _1._7.DataStructures
         {
             var ret = string.Empty;
 
-            for(var i = 0; i < Width; i++)
+            for(var i = 0; i < Height; i++)
             {
-               for(var j = 0; j < Height; j++)
+               for(var j = 0; j < Width; j++)
                 {
                     if(j == 0)
                     {
@@ -100,7 +100,7 @@ namespace _1._7.DataStructures
                         ret += ", ";
                     }
 
-                    ret += $"[{this[i,j]}]";
+                    ret += $"[{this[j,i]}]";
                 } 
             }
 
