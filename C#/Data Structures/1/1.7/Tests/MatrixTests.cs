@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using _1._7.DataStructures;
+using System.Diagnostics;
 
 namespace Tests
 {
@@ -21,8 +22,9 @@ namespace Tests
                 for (var j = 0; j < m.Height; j++)
                 {
                     var y = (byte)(j + 1);
-                    var p = new Pixel(x, x, y, y);
+                    var p = new Pixel(y, y, x, x);
 
+                    Trace.WriteLine($"[{x}, {y}]: {p} == {m[i,j]}");
                     Assert.AreEqual(m[i, j], p,
                         $"{m[i, j]} <> {p}\n{m}");
                 }

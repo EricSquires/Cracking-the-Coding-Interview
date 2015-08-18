@@ -50,7 +50,7 @@ namespace _1._7.DataStructures
             _matrix = new T[(int)width, (int)width];
             for(var i = 0; i < items.Length; i++)
             {
-                _matrix[(int)((double)i/Width), i % Width] = items[i];
+                this[i % Width, (int)((double)i/Width)] = items[i];
             }
         }
 
