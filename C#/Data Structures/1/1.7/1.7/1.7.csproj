@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Answers\IRotator.cs" />
     <Compile Include="Answers\RotateSimple.cs" />
     <Compile Include="DataStructures\Matrix.cs" />
     <Compile Include="DataStructures\Pixel.cs" />

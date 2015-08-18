@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace _1._7.Answers
 {
-    public static class RotateSimple
+    public class RotateSimple : IRotator
     {
-        public static Matrix<Pixel> Rotate(Matrix<Pixel> input)
+        public Matrix<Pixel> Rotate(Matrix<Pixel> input)
         {
             var output = new Matrix<Pixel>(input.Width);
 
