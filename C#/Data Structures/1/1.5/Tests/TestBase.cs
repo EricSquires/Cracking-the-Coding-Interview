@@ -30,6 +30,7 @@ namespace Tests
         [TestMethod]
         public void MoreAwayTests()
         {
+            Assert.IsFalse(TestObject.IsOneAway("pale", "pke"));
             Assert.IsFalse(TestObject.IsOneAway("pale", "bake"));
             Assert.IsFalse(TestObject.IsOneAway("bake", "pale"));
             Assert.IsFalse(TestObject.IsOneAway("pe", "pale"));
