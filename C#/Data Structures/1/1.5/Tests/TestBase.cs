@@ -35,5 +35,11 @@ namespace Tests
             Assert.IsFalse(TestObject.IsOneAway("pe", "pale"));
             Assert.IsFalse(TestObject.IsOneAway("pale", "pe"));
         }
+
+        [TestMethod]
+        public void ZeroAwayTests()
+        {
+            Assert.IsTrue(TestObject.IsOneAway("pale", "pale"));
+        }
     }
 }
