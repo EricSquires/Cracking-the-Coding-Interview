@@ -6,14 +6,14 @@ using _1._7.DataStructures;
 namespace Tests
 {
     [TestClass]
-    public class TestBase<T> where T : IRotator, new()
+    public class RotatorTests
     {
-        protected T TestObject { get; set; }
+        protected Rotator TestObject { get; set; }
 
         [TestInitialize]
         public void Initialize()
         {
-            TestObject = new T();
+            TestObject = new Rotator();
         }
 
         [TestMethod]

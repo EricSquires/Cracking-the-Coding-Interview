@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _1._7.Answers
 {
-    public class RotateSimple : IRotator
+    public class Rotator
     {
         /// <summary>
         /// Rotates the given <see cref="Matrix{T}"/> clockwise.
