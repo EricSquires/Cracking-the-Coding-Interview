@@ -9,6 +9,11 @@ namespace _1._7.Answers
 {
     public class RotateSimple : IRotator
     {
+        /// <summary>
+        /// Rotates the given <see cref="Matrix{T}"/> clockwise.
+        /// </summary>
+        /// <param name="input">A <see cref="Matrix{T}"/> to be rotated</param>
+        /// <returns>The <paramref name="input"/> <see cref="Matrix{T}"/> rotated clockwise.</returns>
         public Matrix<Pixel> RotateCW(Matrix<Pixel> input)
         {
             var output = new Matrix<Pixel>(input.Width);
@@ -24,6 +29,11 @@ namespace _1._7.Answers
             return output;
         }
 
+        /// <summary>
+        /// Rotates the given <see cref="Matrix{T}"/> counter-clockwise.
+        /// </summary>
+        /// <param name="input">A <see cref="Matrix{T}"/> to be rotated</param>
+        /// <returns>The <paramref name="input"/> <see cref="Matrix{T}"/> rotated counter-clockwise.</returns>
         public Matrix<Pixel> RotateCCW(Matrix<Pixel> input)
         {
             var output = new Matrix<Pixel>(input.Width);
