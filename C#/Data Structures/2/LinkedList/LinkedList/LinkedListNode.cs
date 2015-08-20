@@ -30,6 +30,8 @@ namespace LinkedList
             }
         }
 
+        public LinkedListNode(params T[] values) : this((IEnumerable<T>)values) { }
+
         public LinkedListNode(T value)
         {
             Value = value;
