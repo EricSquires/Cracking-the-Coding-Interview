@@ -8,17 +8,30 @@ namespace _2._1.Answers
         public void RemoveDupes<T>(LinkedListNode<T> head)
         {
             var values = new System.Collections.Generic.HashSet<T>();
+            var current = head;
 
             do
             {
-                if(!values.Add(head.Value))
+                if(!values.Add(current.Value))
                 {
-                    head.Remove();
+                    current.Remove();
                 }
 
-                head = head.Next;
+                current = current.Next;
             }
-            while(head != null);
+            while(current != null);
+
+            current = head.Last;
+
+            while(current != null)
+            {
+                if (!values.Add(current.Value))
+                {
+                    current.Remove();
+                }
+
+                current = current.Last;
+            }
         }
     }
 }
