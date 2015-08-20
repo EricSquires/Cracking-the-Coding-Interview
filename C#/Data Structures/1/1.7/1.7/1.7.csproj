@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Answers\Rotator.cs" />
+    <Compile Include="Answers\RotatorInPlace.cs" />
     <Compile Include="DataStructures\Matrix.cs" />
     <Compile Include="DataStructures\Pixel.cs" />
     <Compile Include="Program.cs" />
