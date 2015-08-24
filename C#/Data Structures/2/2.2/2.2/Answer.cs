@@ -13,7 +13,7 @@ namespace _2._2
             LinkedListNode<T> current = head;
             
             // Iterate until i = k. At that point, head is the answer.
-            for(var i = 1; current != null && i < k; i++, current = current.Next);
+            for(var i = 0; current != null && i < k; i++, current = current.Next);
 
             // The list contains fewer than k elements, return null since there's no answer.
             if(current == null)
@@ -25,7 +25,7 @@ namespace _2._2
 
             // We're at the kth element, so head is the current answer. Simply iterate to the end of the list, incrementing ret
             // at the same time. Whatever ret ends up being is the answer.
-            for(; current != null; ret = ret.Next, current = current.Next);
+            for(; current.Next != null; ret = ret.Next, current = current.Next);
 
             return ret;
         }
