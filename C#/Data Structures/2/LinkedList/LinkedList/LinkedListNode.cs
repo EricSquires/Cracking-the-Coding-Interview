@@ -44,18 +44,21 @@ namespace LinkedList
         {
             return Add(new LinkedListNode<T>(value));
         }
-
-        /// <summary>
-        /// Adds the given node in front of this one for faster performance.
-        /// </summary>
-        /// <returns>The new head node</returns>
+        
+        /// <returns>The head node</returns>
         public LinkedListNode<T> Add(LinkedListNode<T> node)
         {
-            node.Next = this;
-            node.Last = Last;
-            Last = node;
+            var current = this;
 
-            return node;
+            while(current.Next != null)
+            {
+                current = current.Next;
+            }
+
+            current.Next = node;
+            node.Last = current;
+
+            return this;
         }
 
         public void Remove()
