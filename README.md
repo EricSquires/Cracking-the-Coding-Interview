@@ -17,7 +17,7 @@ Progress:
   9. **String Rotation**:
 2. Linked Lists
   1. **Remove Dupes**: 1/2 solved
-  2. **Return Kth to Last**:
+  2. **Return Kth to Last**: Solved
   3. **Delete Middle Node**:
   4. **Partition**:
   5. **Sum Lists**:
