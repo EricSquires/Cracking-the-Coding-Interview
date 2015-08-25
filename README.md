@@ -18,7 +18,7 @@ Progress:
 2. Linked Lists
   1. **Remove Dupes**: 1/2 solved
   2. **Return Kth to Last**: Solved
-  3. **Delete Middle Node**:
+  3. **Delete Middle Node**: Solved
   4. **Partition**:
   5. **Sum Lists**:
   6. **Palindrome**:
