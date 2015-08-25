@@ -126,12 +126,17 @@ namespace LinkedList
 
         public override string ToString()
         {
-            return GetString(Direction.Back | Direction.Forward);
+            return GetString(Direction.Back | Direction.Forward, true);
         }
 
-        private string GetString(Direction direction)
+        private string GetString(Direction direction, bool isOrigin = false)
         {
             string ret = Value.ToString();
+
+            if(isOrigin)
+            {
+                ret = "{" + ret + "}";
+            }
 
             if(direction.HasFlag(Direction.Back) && Last != null)
             {
@@ -140,6 +145,11 @@ namespace LinkedList
 
             if(direction.HasFlag(Direction.Forward))
             {
+                if(Next != null)
+                {
+                    ret += ", ";
+                }
+
                 ret += Next?.GetString(Direction.Forward);
             }
 
