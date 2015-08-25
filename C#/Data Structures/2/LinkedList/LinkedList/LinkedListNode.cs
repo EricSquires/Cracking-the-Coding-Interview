@@ -10,8 +10,8 @@ namespace LinkedList
     {
         public T Value { get; set; }
 
-        public LinkedListNode<T> Next { get; private set; }
-        public LinkedListNode<T> Last { get; private set; }
+        public LinkedListNode<T> Next { get; set; }
+        public LinkedListNode<T> Last { get; set; }
 
         public LinkedListNode(IEnumerable<T> values)
         {
