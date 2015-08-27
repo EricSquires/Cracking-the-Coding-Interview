@@ -26,8 +26,8 @@ namespace _2._5
                     val += b.Value;
                 }
 
-                remainder = val % numBase;
-                val /= numBase; // Rely on integer division to get down to the actual value
+                remainder = val / numBase;
+                val = val % numBase;
 
                 ret.Add(val);
 
