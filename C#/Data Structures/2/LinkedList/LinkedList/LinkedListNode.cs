@@ -8,38 +8,18 @@ namespace LinkedList
 {
     public class LinkedListNode<T> : IEquatable<LinkedListNode<T>>
     {
-        private T _value;
-        public T Value
-        {
-            
-            get { return _value; }
-            set
-            {
-                _value = value;
-                _hasValue = true;
-            }
-        }
+        public T Value { get; set; }
 
-        private bool _hasValue = false;
+        public int Length { get; set; }
 
         public LinkedListNode<T> Next { get; set; }
         public LinkedListNode<T> Last { get; set; }
 
         public LinkedListNode(IEnumerable<T> values)
         {
-            LinkedListNode<T> currentNode = null;
-
             foreach(var val in values)
             {
-                if(currentNode == null)
-                {
-                    Value = val;
-                    currentNode = this;
-                }
-                else
-                {
-                    currentNode = Add(val);
-                }
+                Add(val);
             }
         }
 
@@ -48,15 +28,18 @@ namespace LinkedList
         public LinkedListNode(T value)
         {
             Value = value;
+            Length = 1;
         }
 
         public LinkedListNode() { }
 
         public LinkedListNode<T> Add(T value)
         {
-            if(!_hasValue)
+            if(Length == 0)
             {
                 Value = value;
+
+                Length++;
                 return this;
             }
             else
@@ -68,15 +51,16 @@ namespace LinkedList
         /// <returns>The head node</returns>
         public LinkedListNode<T> Add(LinkedListNode<T> node)
         {
-            var current = this;
+            Length++;
 
-            while(current.Next != null)
+            if(Next == null)
             {
-                current = current.Next;
+                Next = node;
             }
-
-            current.Next = node;
-            node.Last = current;
+            else
+            {
+                Next.Add(node);
+            }
 
             return this;
         }
