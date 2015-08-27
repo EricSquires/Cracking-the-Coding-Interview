@@ -66,6 +66,8 @@ namespace _2._5
             int remainder = 0;
             int value = 0;
 
+            LinkedListNode<int> aNext = null, bNext = null;
+
             if(a == null && b == null)
             {
                 return null;
@@ -73,10 +75,16 @@ namespace _2._5
             else if(b == null || a.Length > b.Length)
             {
                 value = a.Value;
+
+                aNext = a.Next;
+                bNext = b;
             }
             else if(a == null || b.Length > a.Length)
             {
                 value = b.Value;
+
+                aNext = a;
+                bNext = b.Next;
             }
             else
             {
@@ -84,15 +92,22 @@ namespace _2._5
 
                 remainder = value / numBase;
                 value = value % numBase;
+
+                aNext = a.Next;
+                bNext = b.Next;
             }
             
             var ret = new LinkedListNode<int>(value);
 
-            var nextRet = AddOnesLastRecursive(a?.Next, b?.Next, numBase);
+            var nextRet = AddOnesLastRecursive(aNext, bNext, numBase);
 
             if (nextRet != null)
             {
                 ret.Value += nextRet.Item1;
+
+                remainder += ret.Value / numBase;
+                ret.Value = ret.Value % numBase;
+
                 ret.Add(nextRet.Item2);
             }
 
