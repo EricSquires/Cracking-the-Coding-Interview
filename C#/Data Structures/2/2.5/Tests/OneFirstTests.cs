@@ -17,6 +17,12 @@ namespace Tests
 
             Assert.AreEqual(expected, Answer.AddOnesFirst(a, b));
 
+            a = new LinkedListNode<int>(9, 7, 8);
+            b = new LinkedListNode<int>(6, 8, 5);
+            expected = new LinkedListNode<int>(5, 6, 4, 1);
+
+            Assert.AreEqual(expected, Answer.AddOnesFirst(a, b));
+
             a = new LinkedListNode<int>(1);
             b = new LinkedListNode<int>(1);
             expected = new LinkedListNode<int>(2);
