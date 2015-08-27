@@ -8,7 +8,19 @@ namespace LinkedList
 {
     public class LinkedListNode<T> : IEquatable<LinkedListNode<T>>
     {
-        public T Value { get; set; }
+        private T _value;
+        public T Value
+        {
+            
+            get { return _value; }
+            set
+            {
+                _value = value;
+                _hasValue = true;
+            }
+        }
+
+        private bool _hasValue = false;
 
         public LinkedListNode<T> Next { get; set; }
         public LinkedListNode<T> Last { get; set; }
@@ -38,11 +50,19 @@ namespace LinkedList
             Value = value;
         }
 
-        public LinkedListNode() : this(default(T)) { }
+        public LinkedListNode() { }
 
         public LinkedListNode<T> Add(T value)
         {
-            return Add(new LinkedListNode<T>(value));
+            if(!_hasValue)
+            {
+                Value = value;
+                return this;
+            }
+            else
+            {
+                return Add(new LinkedListNode<T>(value));
+            }
         }
         
         /// <returns>The head node</returns>
