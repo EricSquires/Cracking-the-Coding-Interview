@@ -21,6 +21,6 @@ Progress:
   3. **Delete Middle Node**: Solved
   4. **Partition**: Solved
   5. **Sum Lists**: Solved
-  6. **Palindrome**:
+  6. **Palindrome**: Solved
   7. **Intersection**:
   8. **Loop Detection**:
