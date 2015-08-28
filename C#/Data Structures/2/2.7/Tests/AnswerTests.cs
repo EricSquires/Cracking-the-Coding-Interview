@@ -33,7 +33,7 @@ namespace Tests
                         currentRepl.Last.Next = currentInt;
                     }
 
-                    Assert.AreEqual(currentInt, Answer.GetIntersection(inputOne, inputTwo));
+                    Assert.AreSame(currentInt, Answer.GetIntersection(inputOne, inputTwo));
                 }
             }
         }
@@ -74,7 +74,7 @@ namespace Tests
                         currentRepl.Last.Next = currentInt;
                     }
 
-                    Assert.AreEqual(currentInt, Answer.GetIntersectionNoSet(inputOne, inputTwo));
+                    Assert.AreSame(currentInt, Answer.GetIntersectionNoSet(inputOne, inputTwo));
                 }
             }
         }
