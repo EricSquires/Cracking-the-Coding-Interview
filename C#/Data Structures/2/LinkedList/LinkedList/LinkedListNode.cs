@@ -128,37 +128,37 @@ namespace LinkedList
             return true;
         }
 
-        public override string ToString()
-        {
-            return GetString(Direction.Back | Direction.Forward, true);
-        }
+        //public override string ToString()
+        //{
+        //    return GetString(Direction.Back | Direction.Forward, true);
+        //}
 
-        private string GetString(Direction direction, bool isOrigin = false)
-        {
-            string ret = Value.ToString();
+        //private string GetString(Direction direction, bool isOrigin = false)
+        //{
+        //    string ret = Value.ToString();
 
-            if(isOrigin)
-            {
-                ret = "{" + ret + "}";
-            }
+        //    if(isOrigin)
+        //    {
+        //        ret = "{" + ret + "}";
+        //    }
 
-            if(direction.HasFlag(Direction.Back) && Last != null)
-            {
-                ret = Last.GetString(Direction.Back) + ", " + ret;
-            }
+        //    if(direction.HasFlag(Direction.Back) && Last != null)
+        //    {
+        //        ret = Last.GetString(Direction.Back) + ", " + ret;
+        //    }
 
-            if(direction.HasFlag(Direction.Forward))
-            {
-                if(Next != null)
-                {
-                    ret += ", ";
-                }
+        //    if(direction.HasFlag(Direction.Forward))
+        //    {
+        //        if(Next != null)
+        //        {
+        //            ret += ", ";
+        //        }
 
-                ret += Next?.GetString(Direction.Forward);
-            }
+        //        ret += Next?.GetString(Direction.Forward);
+        //    }
 
-            return ret;
-        }
+        //    return ret;
+        //}
 
         [Flags]
         private enum Direction
