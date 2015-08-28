@@ -20,7 +20,7 @@ Progress:
   2. **Return Kth to Last**: Solved
   3. **Delete Middle Node**: Solved
   4. **Partition**: Solved
-  5. **Sum Lists**:
+  5. **Sum Lists**: Solved
   6. **Palindrome**:
   7. **Intersection**:
   8. **Loop Detection**:
