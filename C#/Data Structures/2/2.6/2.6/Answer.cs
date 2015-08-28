@@ -11,9 +11,9 @@ namespace _2._6
             var current = head;
 
             int midFirst = head.Length / 2;
-            int midLast = midFirst + (head.Length % 2 == 0 ? 1 : 2);
+            int midLast = (int)Math.Ceiling(head.Length / 2.0) + 1;
 
-            for(var i = 0; i < head.Length; i++, current = current.Next)
+            for(var i = 1; i < head.Length; i++, current = current.Next)
             {
                 if(i <= midFirst)
                 {
