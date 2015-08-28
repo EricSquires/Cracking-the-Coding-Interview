@@ -22,5 +22,5 @@ Progress:
   4. **Partition**: Solved
   5. **Sum Lists**: Solved
   6. **Palindrome**: Solved
-  7. **Intersection**:
-  8. **Loop Detection**:
+  7. **Intersection**: Solved
+  8. **Loop Detection**: Solved
