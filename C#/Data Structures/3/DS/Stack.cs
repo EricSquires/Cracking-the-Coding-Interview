@@ -15,6 +15,8 @@ namespace DS
         {
             get { return _currentIndex + 1; }
         }
+        
+        public bool IsEmpty => Length == 0;
 
         public Stack(int size)
         {

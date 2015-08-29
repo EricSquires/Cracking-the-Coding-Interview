@@ -13,6 +13,8 @@ namespace DS
         
         public int Length { get; private set; } = 0;
 
+        public bool IsEmpty => Length == 0;
+
         public Queue(int size)
         {
             _values = new T[size];
