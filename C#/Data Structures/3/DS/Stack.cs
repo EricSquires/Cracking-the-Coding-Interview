@@ -17,6 +17,8 @@ namespace DS
         }
         
         public bool IsEmpty => Length == 0;
+        
+        public int MaxLength => _values.Length;
 
         public Stack(int size)
         {
