@@ -55,5 +55,21 @@ namespace Tests
 
             Assert.IsTrue(s.IsEmpty);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void StackEmptyTests()
+        {
+            var s = new Stack<int>(10);
+            s.Pop();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void StackFullTests()
+        {
+            var s = new Stack<int>(1);
+            s.Push(1).Push(2);
+        }
     }
 }

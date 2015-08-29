@@ -52,5 +52,21 @@ namespace Tests
 
             Assert.IsTrue(q.IsEmpty);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void QueueEmptyTests()
+        {
+            var q = new Queue<int>(10);
+            q.Dequeue();
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void QueueFullTests()
+        {
+            var q = new Queue<int>(1);
+            q.Enqueue(1).Enqueue(2);
+        }
     }
 }
