@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QueueWithStacks.cs" />
     <Compile Include="SetOfStacks.cs" />
     <Compile Include="StackMin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
