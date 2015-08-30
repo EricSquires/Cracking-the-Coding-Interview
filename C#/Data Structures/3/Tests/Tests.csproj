@@ -54,9 +54,14 @@
   <ItemGroup>
     <Compile Include="QueueTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StackMinTests.cs" />
     <Compile Include="StackTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\3\3.csproj">
+      <Project>{c6d3bc4e-3302-4c5d-a6c1-9113f7c6cf3e}</Project>
+      <Name>3</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DS\DS.csproj">
       <Project>{89233749-0a7a-407f-b875-8f6c35f79c2b}</Project>
       <Name>DS</Name>
