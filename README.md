@@ -24,3 +24,10 @@ Progress:
   6. **Palindrome**: Solved
   7. **Intersection**: Solved
   8. **Loop Detection**: Solved
+3. Stacks and Queues
+  1. **Three in One**:
+  2. **Stack Min**: Solved
+  3. **Stack of Plates**: Solved
+  4. **Queue via Stacks**: Solved
+  5. **Sort Stack**:
+  6. **Animal Shelter**:
