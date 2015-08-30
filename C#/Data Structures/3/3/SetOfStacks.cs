@@ -11,9 +11,9 @@ namespace _3
         private readonly List<DS.Stack<T>> _stacks = new List<DS.Stack<T>>();
         private int _currentStack = -1;
 
-        public int NumStacks => _currentStack + 1;
+        public int NumStacks => _stacks.Count(s => !s.IsEmpty);
 
-        public int Length { get; private set; } = 0;
+        public int Length => _stacks.Sum(s => s.Length);
 
         public int MaxStackSize { get; }
 
@@ -40,7 +40,24 @@ namespace _3
 
         public T Pop()
         {
-            return PopAt(_currentStack);
+            if(_currentStack < 0)
+            {
+                throw new InvalidOperationException();
+            }
+
+            if (_stacks[_currentStack].IsEmpty)
+            {
+                _currentStack--;
+            }
+
+            try
+            {
+                return PopAt(_currentStack);
+            }
+            catch(IndexOutOfRangeException)
+            {
+                throw new InvalidOperationException();
+            }
         }
 
         public T PopAt(int index)
@@ -49,13 +66,8 @@ namespace _3
             {
                 throw new IndexOutOfRangeException();
             }
-            
-            if (_stacks[_currentStack].IsEmpty)
-            {
-                _currentStack--;
-            }
 
-            return _stacks[_currentStack].Pop();
+            return _stacks[index].Pop();
         }
     }
 }

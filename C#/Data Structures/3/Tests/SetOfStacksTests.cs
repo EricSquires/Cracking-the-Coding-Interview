@@ -43,9 +43,10 @@ namespace Tests
 
             for (var i = s.Length - 1; i >= 0; i--)
             {
+                Assert.AreEqual(i / 3 + 1, s.NumStacks);
                 Assert.AreEqual(i, s.Pop());
                 Assert.AreEqual(i, s.Length);
-                Assert.AreEqual(i / 3, s.NumStacks);
+                Assert.AreEqual(Math.Ceiling(i / 3.0), s.NumStacks);
             }
 
             Assert.AreEqual(0, s.Length);
