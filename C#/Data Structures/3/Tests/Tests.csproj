@@ -58,6 +58,7 @@
     <Compile Include="StackMinTests.cs" />
     <Compile Include="StackTests.cs" />
     <Compile Include="SetOfStacksTests.cs" />
+    <Compile Include="AnimalShelterTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\3\3.csproj">
