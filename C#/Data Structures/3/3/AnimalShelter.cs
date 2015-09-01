@@ -30,6 +30,11 @@ namespace _3
                 AnimalType = type;
                 Name = name;
             }
+
+            public override string ToString()
+            {
+                return $"{this.AnimalType}: {Name}";
+            }
         }
 
         private AnimalNode _head;
@@ -40,25 +45,42 @@ namespace _3
 
         public void Enqueue(AnimalNode node)
         {
-            var current = _head;
-            AnimalNode lastSame = current.AnimalType == node.AnimalType ? current : null;
-
-            while (current.Next != null)
+            if(_head == null)
             {
-                current = current.Next;
+                _head = node;
+            }
+            else
+            {
+                var current = _head;
+                AnimalNode lastSame = current.AnimalType == node.AnimalType ? current : null;
+            
 
-                if (current.AnimalType == node.AnimalType)
+                while (current.Next != null)
                 {
-                    lastSame = current;
+                    current = current.Next;
+
+                    if (current.AnimalType == node.AnimalType)
+                    {
+                        lastSame = current;
+                    }
+                }
+
+                current.Next = node;
+                node.Last = current;
+
+                if (lastSame != null)
+                {
+                    lastSame.NextSame = node;
                 }
             }
 
-            current.Next = node;
-            node.Last = current;
-
-            if (lastSame != null)
+            if(node.AnimalType == AnimalType.Cat && _headCat == null)
             {
-                lastSame.NextSame = node;
+                _headCat = node;
+            }
+            else if(node.AnimalType == AnimalType.Dog && _headDog == null)
+            {
+                _headDog = node;
             }
         }
 
@@ -68,14 +90,14 @@ namespace _3
 
             if(_head == _headDog)
             {
-                _headDog = _headDog.NextSame;
+                _headDog = _headDog?.NextSame;
             }
             else
             {
-                _headCat = _headCat.NextSame;
+                _headCat = _headCat?.NextSame;
             }
 
-            _head = _head.Next;
+            _head = _head?.Next;
 
             return ret;
         }
@@ -88,11 +110,13 @@ namespace _3
             {
                 case AnimalType.Cat:
                     ret = _headCat;
+                    _headCat.Last.Next = _headCat.Next;
                     _headCat = _headCat.NextSame;
                     break;
 
                 case AnimalType.Dog:
                     ret = _headDog;
+                    _headDog.Last.Next = _headDog.Next;
                     _headDog = _headDog.NextSame;
                     break;
             }
