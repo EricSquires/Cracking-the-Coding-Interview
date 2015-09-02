@@ -10,7 +10,7 @@ namespace DS
     {
         public T Value { get; set; }
 
-        private readonly Dictionary<GraphNode<T>, double> _neighbors = new Dictionary<GraphNode<T>, double>();
+        protected readonly Dictionary<GraphNode<T>, double> _neighbors = new Dictionary<GraphNode<T>, double>();
         public IReadOnlyCollection<GraphNode<T>> Neighbors => _neighbors.Keys.ToList().AsReadOnly();
         
         public GraphNode(T value, params GraphNode<T>[] neighbors)
@@ -26,7 +26,7 @@ namespace DS
         /// <summary>
         /// Connects this node to the given one and returns this node for easy chaining of statements.
         /// </summary>
-        public virtual GraphNode<T> ConnectTo(GraphNode<T> neighbor)
+        public GraphNode<T> ConnectTo(GraphNode<T> neighbor)
         {
             return ConnectTo(neighbor, 1);
         }
