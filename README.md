@@ -30,4 +30,17 @@ Progress:
   3. **Stack of Plates**: Solved
   4. **Queue via Stacks**: Solved
   5. **Sort Stack**:
-  6. **Animal Shelter**:
+  6. **Animal Shelter**: Solved
+4. Trees and Graphs
+  1. **Route Between Nodes**: Solved
+  2. **Minimal Tree**: Need tests
+  3. **List of Depths**:
+  4. **Check Balanced**:
+  5. **Validate BST**:
+  6. **Successor**:
+  7. **Build Order**:
+  8. **First Common Ancestor**:
+  9. **BST Sequences**:
+  10. **Check Subtree**:
+  11. **Random Node**:
+  12. **Paths with Sum**:
