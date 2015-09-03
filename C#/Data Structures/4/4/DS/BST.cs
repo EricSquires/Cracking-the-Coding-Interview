@@ -6,17 +6,12 @@ using System.Threading.Tasks;
 
 namespace DS
 {
-    public class BST<T> where T : IComparable<T>
+    public class BST<T> : BinaryTree<T> where T : IComparable<T>
     {
-        public BST<T> Left { get; private set; }
-        public BST<T> Right { get; private set; }
+        new public BST<T> Left { get; private set; }
+        new public BST<T> Right { get; private set; }
 
-        public T Value { get; }
-
-        public BST(T value)
-        {
-            Value = value;
-        }
+        public BST(T value) : base(value) { }
 
         public void Insert(T value)
         {
