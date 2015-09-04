@@ -34,7 +34,7 @@ Progress:
 4. Trees and Graphs
   1. **Route Between Nodes**: Solved
   2. **Minimal Tree**: Need tests
-  3. **List of Depths**:
+  3. **List of Depths**: Solved
   4. **Check Balanced**:
   5. **Validate BST**:
   6. **Successor**:
