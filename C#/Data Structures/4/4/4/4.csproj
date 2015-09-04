@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DepthsLists.cs" />
     <Compile Include="MinimalTree.cs" />
     <Compile Include="RouteBetween.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
