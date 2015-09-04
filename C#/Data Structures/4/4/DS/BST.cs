@@ -8,8 +8,17 @@ namespace DS
 {
     public class BST<T> : BinaryTree<T> where T : IComparable<T>
     {
-        new public BST<T> Left { get; private set; }
-        new public BST<T> Right { get; private set; }
+        new public BST<T> Left
+        {
+            get { return (BST<T>)base.Left; }
+            private set { base.Left = value; }
+        }
+
+        new public BST<T> Right
+        {
+            get { return (BST<T>)base.Right; }
+            private set { base.Right = value; }
+        }
 
         public BST(T value) : base(value) { }
 
