@@ -8,49 +8,49 @@ to get through everything in a more timely fashion.
 
 Progress:
 
-| Arrays and Strings     | Status |
+| [Arrays and Strings](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/1)     | Status |
 |------------------------|--------|
-| Is Unique              | Solved |
-| Check Permutation      | Solved |
-| URLify                 | Solved |
-| Palindrome Permutation | Solved |
-| One Away               | Solved |
-| String Compression     | Solved |
-| Rotate Matrix          | Solved |
+| [Is Unique](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/1/1.1)              | Solved |
+| [Check Permutation](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/1/1.2)      | Solved |
+| [URLify](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/1/1.3)                 | Solved |
+| [Palindrome Permutation](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/1/1.4) | Solved |
+| [One Away](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/1/1.5)               | Solved |
+| [String Compression](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/1/1.6)     | Solved |
+| [Rotate Matrix](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/1/1.7)          | Solved |
 | Zero Matrix            |        |
 | String Rotation        |        |
 
 
-| Linked Lists           | Status     |
+| [Linked Lists](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/2)           | Status     |
 |------------------------|------------|
-| Remove Dupes           | 1/2 solved |
-| Return Kth to Last     | Solved     |
-| Delete Middle Node     | Solved     |
-| Partition              | Solved     |
-| Sum Lists              | Solved     |
-| Palindrome             | Solved     |
-| Intersection           | Solved     |
-| Loop Detection         | Solved     |
+| [Remove Dupes](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/2/2.1)           | 1/2 solved |
+| [Return Kth to Last](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/2/2.2)     | Solved     |
+| [Delete Middle Node](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/2/2.3)     | Solved     |
+| [Partition](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/2/2.4)              | Solved     |
+| [Sum Lists](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/2/2.5)              | Solved     |
+| [Palindrome](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/2/2.6)             | Solved     |
+| [Intersection](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/2/2.7)           | Solved     |
+| [Loop Detection](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/2/2.8)         | Solved     |
 
 
-| Stacks and Queues      | Status     |
+| [Stacks and Queues](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/3)      | Status     |
 |------------------------|------------|
 | Three in One           |            |
-| Stack Min              | Solved     |
-| Stack of Plates        | Solved     |
-| Queue via Stacks       | Solved     |
+| [Stack Min](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/3/3/StackMin.cs)              | Solved     |
+| [Stack of Plates](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/3/3/SetOfStacks.cs)        | Solved     |
+| [Queue via Stacks](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/3/3/QueueWithStacks.cs)       | Solved     |
 | Sort Stack             |            |
-| Animal Shelter         | Solved     |
+| [Animal Shelter](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/3/3/AnimalShelter.cs)         | Solved     |
 
 
-| Trees and Graphs       | Status     |
+| [Trees and Graphs](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4)       | Status     |
 |------------------------|------------|
-| Route Between Nodes    | Solved     |
-| Minimal Tree           | Need tests |
-| List of Depths         | Solved     |
-| Check Balanced         | Solved     |
-| Validate BST           | Need tests |
-| Successor              | Need tests |
+| [Route Between Nodes](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/RouteBetween.cs)    | Solved     |
+| [Minimal Tree](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/MinimalTree.cs)           | Need tests |
+| [List of Depths](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/DepthsList.cs)         | Solved     |
+| [Check Balanced](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/CheckBalance.cs)         | Solved     |
+| [Validate BST](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/ValidateBST.cs)           | Need tests |
+| [Successor](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/GetSuccessor.cs)              | Need tests |
 | Build Order            |            |
 | First Common Ancestor  |            |
 | BST Sequences          |            |
