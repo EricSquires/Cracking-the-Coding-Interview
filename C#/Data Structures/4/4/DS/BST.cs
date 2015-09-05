@@ -8,6 +8,8 @@ namespace DS
 {
     public class BST<T> : BinaryTree<T> where T : IComparable<T>
     {
+        public BST<T> Parent { get; private set; }
+
         new public BST<T> Left
         {
             get { return (BST<T>)base.Left; }
@@ -28,7 +30,7 @@ namespace DS
             {
                 if(Left == null)
                 {
-                    Left = new BST<T>(value);
+                    Left = new BST<T>(value) { Parent = this };
                 }
                 else
                 {
@@ -39,7 +41,7 @@ namespace DS
             {
                 if (Right == null)
                 {
-                    Right = new BST<T>(value);
+                    Right = new BST<T>(value) { Parent = this };
                 }
                 else
                 {
