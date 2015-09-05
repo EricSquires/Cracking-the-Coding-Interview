@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CheckBalance.cs" />
     <Compile Include="DepthsLists.cs" />
+    <Compile Include="GetSuccessor.cs" />
     <Compile Include="MinimalTree.cs" />
     <Compile Include="RouteBetween.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
