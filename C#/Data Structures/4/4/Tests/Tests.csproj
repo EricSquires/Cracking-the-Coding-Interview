@@ -55,6 +55,7 @@
     <Compile Include="RouteBetweenTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DepthsListsTests.cs" />
+    <Compile Include="CheckBalanceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\4\4.csproj">
