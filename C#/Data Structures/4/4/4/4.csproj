@@ -45,6 +45,7 @@
     <Compile Include="MinimalTree.cs" />
     <Compile Include="RouteBetween.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidateBST.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DS\DS.csproj">
