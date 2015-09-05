@@ -35,9 +35,9 @@ Progress:
   1. **Route Between Nodes**: Solved
   2. **Minimal Tree**: Need tests
   3. **List of Depths**: Solved
-  4. **Check Balanced**:
-  5. **Validate BST**:
-  6. **Successor**:
+  4. **Check Balanced**: Solved
+  5. **Validate BST**: Need tests
+  6. **Successor**: Need tests
   7. **Build Order**:
   8. **First Common Ancestor**:
   9. **BST Sequences**:
