@@ -34,7 +34,7 @@ namespace _4
 
         public bool CanBuild()
         {
-            return _rootProjects.Any(p => HasCycle(_projects[p], new HashSet<DirectedGraphNode<T>>()));
+            return !_rootProjects.Any(p => HasCycle(_projects[p], new HashSet<DirectedGraphNode<T>>()));
         }
 
         public bool HasCycle(DirectedGraphNode<T> root, HashSet<DirectedGraphNode<T>> visited)
