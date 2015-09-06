@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildOrder.cs" />
     <Compile Include="CheckBalance.cs" />
     <Compile Include="DepthsLists.cs" />
     <Compile Include="GetSuccessor.cs" />
