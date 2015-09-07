@@ -83,6 +83,53 @@ namespace Tests
             {
                 Console.Write(p + " -> ");
             }
+
+            dep = new Tuple<int, int>[]
+                {
+                    Tuple.Create(1, 0),
+                    Tuple.Create(2, 0),
+                    Tuple.Create(4, 2),
+                    Tuple.Create(3, 1)
+                };
+
+            bo = new BuildOrder<int>(new[] { 0, 1, 3, 2, 4 }, dep);
+
+            var expected = new int[] { 0, 1, 2, 4, 3 };
+
+            Assert.IsTrue(VerifyOutput(expected, bo.GetBuildOrder().ToArray()));
+
+            var bookDep = new Tuple<char, char>[]
+                {
+                    Tuple.Create('d', 'a'),
+                    Tuple.Create('b', 'f'),
+                    Tuple.Create('d', 'b'),
+                    Tuple.Create('a', 'f'),
+                    Tuple.Create('c', 'd')
+                };
+
+            var bookBo = new BuildOrder<char>(new[] { 'a', 'b', 'c', 'd', 'e', 'f' }, bookDep);
+            var bookExpected = new[] { 'f', 'e', 'a', 'b', 'd', 'c' };
+            var bookActual = bookBo.GetBuildOrder().ToArray();
+
+            Assert.IsTrue(VerifyOutput(bookExpected, bookActual), $"Expected: {string.Join(", ", bookExpected)}\nActual: {string.Join(", ", bookActual)}");
+        }
+
+        private bool VerifyOutput<T>(ICollection<T> expected, ICollection<T> actual) where T : IEquatable<T>
+        {
+            if(expected.Count != actual.Count)
+            {
+                return false;
+            }
+
+            for(var i = 0; i < expected.Count; i++)
+            {
+                if(expected.ElementAt(i).Equals(actual.ElementAt(i)))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }
