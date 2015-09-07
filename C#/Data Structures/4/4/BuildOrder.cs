@@ -48,5 +48,35 @@ namespace _4
 
             return root.Neighbors.Any(n => HasCycle((DirectedGraphNode<T>)n, visited));
         }
+
+        public IEnumerable<T> GetBuildOrder()
+        {
+            var order = new LinkedList<T>();
+            var visited = new HashSet<T>();
+
+            foreach(var p in _rootProjects)
+            {
+                GetBuildOrder(_projects[p], order, visited);
+            }
+
+            return order;
+        }
+
+        private LinkedList<T> GetBuildOrder(DirectedGraphNode<T> root, LinkedList<T> order, HashSet<T> visited)
+        {
+            if(!visited.Add(root.Value))
+            {
+                return order;
+            }
+
+            order.AddFirst(root.Value);
+            
+            foreach(var n in root.Neighbors)
+            {
+                GetBuildOrder((DirectedGraphNode<T>)n, order, visited);
+            }
+
+            return order;
+        }
     }
 }
