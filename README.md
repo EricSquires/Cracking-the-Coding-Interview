@@ -43,15 +43,15 @@ Progress:
 | [Animal Shelter](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/3/3/AnimalShelter.cs)         | Solved     |
 
 
-| [Trees and Graphs](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4)       | Status     |
-|------------------------|------------|
-| [Route Between Nodes](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/RouteBetween.cs)    | Solved     |
-| [Minimal Tree](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/MinimalTree.cs)           | Need tests |
+| [Trees and Graphs](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4)                       | Status     |
+|---------------------------------------------------------------------------------------------------------------------------------------------|------------|
+| [Route Between Nodes](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/RouteBetween.cs)  | Solved     |
+| [Minimal Tree](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/MinimalTree.cs)          | Need tests |
 | [List of Depths](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/DepthsList.cs)         | Solved     |
-| [Check Balanced](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/CheckBalance.cs)         | Solved     |
-| [Validate BST](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/ValidateBST.cs)           | Need tests |
-| [Successor](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/GetSuccessor.cs)              | Need tests |
-| Build Order            |            |
+| [Check Balanced](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/CheckBalance.cs)       | Solved     |
+| [Validate BST](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/ValidateBST.cs)          | Need tests |
+| [Successor](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/GetSuccessor.cs)            | Need tests |
+| [Build Order](https://github.com/EricSquires/Cracking-the-Coding-Interview/blob/master/C%23/Data%20Structures/4/4/BuildOrder.cs)            | Solved     |
 | First Common Ancestor  |            |
 | BST Sequences          |            |
 | Check Subtree          |            |
