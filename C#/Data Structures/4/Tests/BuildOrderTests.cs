@@ -70,7 +70,6 @@ namespace Tests
                 Tuple.Create(_input[58], _input[50]),
                 Tuple.Create(_input[59], _input[50]),
                 Tuple.Create(_input[60], _input[50]),
-                Tuple.Create(_input[50], _input[60]),
                 Tuple.Create(_input[61], _input[60]),
                 Tuple.Create(_input[61], _input[50]),
             };
