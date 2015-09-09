@@ -34,19 +34,32 @@ namespace _4
 
         public bool CanBuild()
         {
-            return !_rootProjects.Any(p => HasCycle(_projects[p], new HashSet<DirectedGraphNode<T>>()));
+            return !HasCycle();
         }
 
-        public bool HasCycle(DirectedGraphNode<T> root, HashSet<DirectedGraphNode<T>> visited)
+        public bool HasCycle()
         {
-            if(visited.Contains(root))
+            foreach(var proj in _projects.Values)
+            {
+                if(proj.Neighbors.Any(n => HasCycle(n, proj, new HashSet<GraphNode<T>>())))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool HasCycle(GraphNode<T> node, GraphNode<T> root, HashSet<GraphNode<T>> visited)
+        {
+            if(node == root)
             {
                 return true;
             }
 
-            visited.Add(root);
-
-            return root.Neighbors.Any(n => HasCycle((DirectedGraphNode<T>)n, visited));
+            visited.Add(node);
+            
+            return node.Neighbors.Any(n => !visited.Contains(n) && HasCycle(n, root, visited));
         }
 
         public IEnumerable<T> GetBuildOrder()
