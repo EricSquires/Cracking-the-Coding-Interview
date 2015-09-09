@@ -78,11 +78,6 @@ namespace Tests
 
             Assert.IsTrue(bo.CanBuild());
 
-            foreach(var p in bo.GetBuildOrder())
-            {
-                Console.Write(p + " -> ");
-            }
-
             dep = new Tuple<int, int>[]
                 {
                     Tuple.Create(1, 0),
@@ -93,7 +88,12 @@ namespace Tests
 
             bo = new BuildOrder<int>(new[] { 0, 1, 3, 2, 4 }, dep);
 
-            var expected = new int[] { 0, 1, 2, 4, 3 };
+            var expected = new int[] { 0, 1, 3, 2, 4 };
+
+            foreach(var p in bo.GetBuildOrder())
+            {
+                Console.Write(p + " -> ");
+            }
 
             Assert.IsTrue(VerifyOutput(expected, bo.GetBuildOrder().ToArray()));
 
@@ -122,7 +122,7 @@ namespace Tests
 
             for(var i = 0; i < expected.Count; i++)
             {
-                if(expected.ElementAt(i).Equals(actual.ElementAt(i)))
+                if(!expected.ElementAt(i).Equals(actual.ElementAt(i)))
                 {
                     return false;
                 }
