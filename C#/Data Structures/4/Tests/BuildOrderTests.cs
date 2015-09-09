@@ -107,7 +107,9 @@ namespace Tests
                 };
 
             var bookBo = new BuildOrder<char>(new[] { 'a', 'b', 'c', 'd', 'e', 'f' }, bookDep);
-            var bookExpected = new[] { 'f', 'e', 'a', 'b', 'd', 'c' };
+
+            // This order differs from the book thanks to implementation details, but it's still a valid answer given the dependencies
+            var bookExpected = new[] { 'e', 'f', 'b', 'a', 'd', 'c' };
             var bookActual = bookBo.GetBuildOrder().ToArray();
 
             Assert.IsTrue(VerifyOutput(bookExpected, bookActual), $"Expected: {string.Join(", ", bookExpected)}\nActual: {string.Join(", ", bookActual)}");
