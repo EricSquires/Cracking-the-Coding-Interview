@@ -10,6 +10,7 @@ namespace _4
     public class BuildOrder<T>
     {
         private Dictionary<T, DirectedGraphNode<T>> _projects = new Dictionary<T, DirectedGraphNode<T>>();
+        private Dictionary<T, HashSet<T>> _dependencies = new Dictionary<T, HashSet<T>>();
         private HashSet<T> _rootProjects = new HashSet<T>();
 
         public BuildOrder(IEnumerable<T> projects, IEnumerable<Tuple<T, T>> dependencies)
@@ -29,6 +30,13 @@ namespace _4
         public void AddDependency(T project, T dependency)
         {
             _projects[dependency].ConnectTo(_projects[project]);
+
+            if(!_dependencies.ContainsKey(project))
+            {
+                _dependencies[project] = new HashSet<T>();
+            }
+
+            _dependencies[project].Add(dependency);
             _rootProjects.Remove(project);
         }
 
@@ -77,12 +85,19 @@ namespace _4
 
         private LinkedList<T> GetBuildOrder(DirectedGraphNode<T> root, LinkedList<T> order, HashSet<T> visited)
         {
-            if(!visited.Add(root.Value))
+            // We haven't built all this node's dependencies
+            if (_dependencies.ContainsKey(root.Value) && _dependencies[root.Value].Any(d => !visited.Contains(d)))
             {
                 return order;
             }
 
-            order.AddFirst(root.Value);
+            // We've already visited this node
+            if (!visited.Add(root.Value))
+            {
+                return order;
+            }
+
+            order.AddLast(root.Value);
             
             foreach(var n in root.Neighbors)
             {
