@@ -52,7 +52,7 @@ Progress:
 | [Validate BST](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/ValidateBST.cs)          | Need tests |
 | [Successor](https://github.com/EricSquires/Cracking-the-Coding-Interview/tree/master/C%23/Data%20Structures/4/4/GetSuccessor.cs)            | Need tests |
 | [Build Order](https://github.com/EricSquires/Cracking-the-Coding-Interview/blob/master/C%23/Data%20Structures/4/4/BuildOrder.cs)            | Solved     |
-| First Common Ancestor  |            |
+| [First Common Ancestor](https://github.com/EricSquires/Cracking-the-Coding-Interview/blob/master/C%23/Data%20Structures/4/4/FirstCommonAncestor.cs)  | Solved     |
 | BST Sequences          |            |
 | Check Subtree          |            |
 | Random Node            |            |
