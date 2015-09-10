@@ -98,6 +98,10 @@ namespace Tests
 
             ValidateResults(searchA, _root, searchA, searchB);
 
+            searchB = _nodes["E"];
+
+            ValidateResults(searchA, _root, searchA, searchB);
+
             searchA = _nodes["L"];
             searchB = _nodes["M"];
 
@@ -118,10 +122,6 @@ namespace Tests
             ValidateResults(expected, _root, searchA, searchB);
 
             searchB = _nodes["L"];
-
-            ValidateResults(expected, _root, searchA, searchB);
-
-            searchB = _nodes["E"];
 
             ValidateResults(expected, _root, searchA, searchB);
 
