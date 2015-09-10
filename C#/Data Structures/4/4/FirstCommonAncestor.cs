@@ -9,7 +9,7 @@ namespace _4
 {
     public static class FirstCommonAncestor
     {
-        public static BinaryTree<T> FindFirstCommonAncestor<T>(BinaryTree<T> root, BinaryTree<T> a, BinaryTree<T> b)
+        public static BinaryTree<T> FindFCA<T>(BinaryTree<T> root, BinaryTree<T> a, BinaryTree<T> b)
         {
             if(root == null) return null;
 
@@ -20,8 +20,8 @@ namespace _4
                 return root;
             }
             
-            return FindFirstCommonAncestor(root.Left, a, b) ??
-                   FindFirstCommonAncestor(root.Right, a, b);
+            return FindFCA(root.Left, a, b) ??
+                   FindFCA(root.Right, a, b);
         }
 
         private static bool DFS<T>(BinaryTree<T> root, BinaryTree<T> searchNode)
