@@ -9,7 +9,7 @@ namespace _4
 {
     public static class BST_Sequences
     {
-        public static IEnumerable<IEnumerable<T>> GetSequences<T>(BST<T> root) where T : IComparable<T>
+        public static LinkedList<LinkedList<T>> GetSequences<T>(BST<T> root) where T : IComparable<T>
         {
             var ret = new LinkedList<LinkedList<T>>();
 
@@ -32,13 +32,19 @@ namespace _4
 
         private static LinkedList<LinkedList<T>> BuildNewList<T>(LinkedList<BinaryTree<T>> depthLst, LinkedList<LinkedList<T>> currentLst)
         {
+            if(depthLst.Count == 0)
+            {
+                return currentLst;
+            }
+
             var ret = new LinkedList<LinkedList<T>>();
 
             foreach (var newPermutation in GetPermutations(depthLst))
             {
                 foreach (var existingPermutation in currentLst)
                 {
-                    ret.AddLast(existingPermutation.AddRange(newPermutation.Select(n => n.Value)));
+                    var newLst = new LinkedList<T>(existingPermutation);
+                    ret.AddLast(newLst.AddRange(newPermutation.Select(n => n.Value)));
                 }
             }
 
@@ -47,13 +53,19 @@ namespace _4
 
         private static IEnumerable<IEnumerable<T>> GetPermutations<T>(LinkedList<T> lst)
         {
+            if(lst.Count == 0)
+            {
+                yield break;
+            }
+
             var start = lst.First;
             do
             {
                 yield return lst.ToArray();
 
-                lst.AddLast(lst.First);
+                var fst = lst.First;
                 lst.RemoveFirst();
+                lst.AddLast(fst);
             }
             while(lst.First != start);
         }

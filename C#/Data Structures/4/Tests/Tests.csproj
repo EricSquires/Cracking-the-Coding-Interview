@@ -58,6 +58,7 @@
     <Compile Include="DepthsListsTests.cs" />
     <Compile Include="CheckBalanceTests.cs" />
     <Compile Include="FirstCommonAncestorTests.cs" />
+    <Compile Include="BST_SequencesTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\4\4.csproj">
