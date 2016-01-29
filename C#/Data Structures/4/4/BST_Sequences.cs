@@ -21,19 +21,44 @@ namespace _4
             var leftPerms = GetSequences(root.Left);
             var rightPerms = GetSequences(root.Right);
 
-            foreach(var lp in leftPerms)
+            if (leftPerms.Count() == 0)
             {
-                foreach(var rp in rightPerms)
+                foreach (var rp in rightPerms)
                 {
-                    var perms = GetPermutations(lp.ToList(), rp.ToList());
+                    var lst = new List<T>();
+                    lst.Add(root.Value);
+                    lst.AddRange(rp);
 
-                    foreach(var perm in perms)
+                    ret.Add(lst);
+                }
+            }
+            else if (rightPerms.Count() == 0)
+            {
+                foreach (var lp in leftPerms)
+                {
+                    var lst = new List<T>();
+                    lst.Add(root.Value);
+                    lst.AddRange(lp);
+
+                    ret.Add(lst);
+                }
+            }
+            else
+            {
+                foreach (var lp in leftPerms)
+                {
+                    foreach (var rp in rightPerms)
                     {
-                        var lst = new List<T>();
-                        lst.Add(root.Value);
-                        lst.AddRange(perm);
+                        var perms = GetPermutations(lp.ToList(), rp.ToList());
 
-                        ret.Add(lst);
+                        foreach (var perm in perms)
+                        {
+                            var lst = new List<T>();
+                            lst.Add(root.Value);
+                            lst.AddRange(perm);
+
+                            ret.Add(lst);
+                        }
                     }
                 }
             }
@@ -42,20 +67,6 @@ namespace _4
             {
                 ret.Add(new[] { root.Value });
             }
-
-            //var depthLists = DepthsLists.GetDepthLists(root);
-
-            //foreach(var dList in depthLists)
-            //{
-            //    if(ret.Count == 0)
-            //    {
-            //        ret.AddLast(new LinkedList<T>(dList.Select(n => n.Value)));
-            //    }
-            //    else
-            //    {
-            //        ret = BuildNewList(dList, ret);
-            //    }
-            //}
 
             return ret;
         }
@@ -108,64 +119,6 @@ namespace _4
             }
 
             return true;
-        }
-
-        private static Tuple<IEnumerable<IEnumerable<T>>, IEnumerable<IEnumerable<T>>> GetChildSequences<T>(BST<T> root) where T : IComparable<T>
-        {
-            IEnumerable<IEnumerable<T>> leftSeq = null;
-            IEnumerable<IEnumerable<T>> rightSeq = null;
-
-            if(root.Left != null)
-            {
-                leftSeq = GetSequences(root.Left);
-            }
-
-            if(root.Right != null)
-            {
-                rightSeq = GetSequences(root.Right);
-            }
-
-            return Tuple.Create(leftSeq, rightSeq);
-        }
-
-        private static LinkedList<LinkedList<T>> BuildNewList<T>(LinkedList<BinaryTree<T>> depthLst, LinkedList<LinkedList<T>> currentLst)
-        {
-            if(depthLst.Count == 0)
-            {
-                return currentLst;
-            }
-
-            var ret = new LinkedList<LinkedList<T>>();
-
-            foreach (var newPermutation in GetPermutations(depthLst))
-            {
-                foreach (var existingPermutation in currentLst)
-                {
-                    var newLst = new LinkedList<T>(existingPermutation);
-                    ret.AddLast(newLst.AddRange(newPermutation.Select(n => n.Value)));
-                }
-            }
-
-            return ret;
-        }
-
-        private static IEnumerable<IEnumerable<T>> GetPermutations<T>(LinkedList<T> lst)
-        {
-            if(lst.Count == 0)
-            {
-                yield break;
-            }
-
-            var start = lst.First;
-            do
-            {
-                yield return lst.ToArray();
-
-                var fst = lst.First;
-                lst.RemoveFirst();
-                lst.AddLast(fst);
-            }
-            while(lst.First != start);
         }
 
         private static LinkedList<T> AddRange<T>(this LinkedList<T> lst, IEnumerable<T> rng)
