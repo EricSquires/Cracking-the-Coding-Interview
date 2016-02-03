@@ -43,6 +43,7 @@
     <Compile Include="BST_Sequences.cs" />
     <Compile Include="BuildOrder.cs" />
     <Compile Include="CheckBalance.cs" />
+    <Compile Include="CheckSubtree.cs" />
     <Compile Include="DepthsLists.cs" />
     <Compile Include="FirstCommonAncestor.cs" />
     <Compile Include="GetSuccessor.cs" />
