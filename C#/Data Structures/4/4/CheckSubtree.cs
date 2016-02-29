@@ -9,6 +9,7 @@ namespace _4
     public class CheckSubtree<T>
     {
         private int _numChildren = 0;
+        public int NumChildren => _numChildren;
 
         private CheckSubtree<T> _parent;
 
@@ -57,7 +58,14 @@ namespace _4
         /// <returns>true if <paramref name="other"/> is a subtree of this node, false otherwise</returns>
         public bool IsSubtree(CheckSubtree<T> other)
         {
-            return other._numChildren == _numChildren && IsSubtreeCheckValues(other);
+            if (other._numChildren > _numChildren)
+            {
+                return false;
+            }
+
+            return (other._numChildren == _numChildren && IsSubtreeCheckValues(other))
+                || (Left != null && Left.IsSubtree(other))
+                || (Right != null && Right.IsSubtree(other));
         }
 
         private bool IsSubtreeCheckValues(CheckSubtree<T> other)
